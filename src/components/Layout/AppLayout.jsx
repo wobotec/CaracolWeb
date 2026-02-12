@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
-import { Navbar } from './Navbar'
-import { Sidebar } from './Sidebar'
+import { Navbar } from './NavBar'
+import { Sidebar } from './SideBar'
 import { Footer } from './Footer'
 import { Breadcrumbs } from './Breadcrumbs'
 
-export function AppLayout() {
+ export default function AppLayout() {
   return (
     <div className="d-flex vh-100">
       <Sidebar />
@@ -21,4 +21,4 @@ export function AppLayout() {
       </div>
     </div>
   )
-}
+} 

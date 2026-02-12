@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { loginRequest } from '@/services/auth.service'
-import { registerRequest } from '@/services/auth.service'
+import { loginRequest } from '../serveces/authService'
+import { registerRequest } from '../serveces/authService'
 
 export const useAuthStore = create(
   persist(
@@ -12,11 +12,11 @@ export const useAuthStore = create(
       error: null,
 
       login: async (data) => {
+        set({ loading: true, error: null })
         try {
-          set({ loading: true, error: null })
 
           const res = await loginRequest(data)
-
+          
           set({
             user: res.user,
             token: res.token,

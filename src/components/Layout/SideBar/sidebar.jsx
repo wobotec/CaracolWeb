@@ -1,4 +1,4 @@
-export function SideBar({ children }){
+export function Sidebar({ children }){
     return (
         <aside className="
         w-20 

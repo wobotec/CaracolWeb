@@ -1,33 +1,34 @@
-import { Routes, Route } from 'react-router-dom'
-import { AppLayout } from '@/components/layout/AppLayout'
+import { Routes, Route} from 'react-router-dom'
+import   AppLayout   from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
+import AuthLayout from '../Layout/AuthLayout';
 
-import Login from '@/pages/login'
-import Dashboard from '@/pages/dashboard'
-import Users from '@/pages/user'
-import NotFound from '@/pages/notFound'
-import Register from '@/pages/register'
+import Login from '../pages/auth/Login'
+import Dashboard from '../pages/dashboard/Dashboard'
+import NotFound from '../pages/notFound/NotFound'
+import Register from '../pages/auth/register'
 
 
-
-export function AppRoutes() {
+export default function AppRoutes() {
   return (
-    <Routes>
+     <Routes>
 
-      {/* Public */}
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+<Route element={<AuthLayout />}>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Route>
 
-      {/* Private */}
+
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/users" element={<Users />} />
         </Route>
       </Route>
 
-      {/* 404 */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+     <Route path="*" element={<NotFound />} />    
+      
+      </Routes> 
+    
+
   )
 }

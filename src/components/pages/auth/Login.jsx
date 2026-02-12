@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
-export function Login() {
+export default function Login() {
   const { login, loading, error, isAuthenticated } = useAuth()
   const navigate = useNavigate()
 
@@ -13,7 +13,7 @@ export function Login() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/')
+      navigate('/', { replace: true })
     }
   }, [isAuthenticated, navigate])
 
@@ -24,8 +24,9 @@ export function Login() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="py-3">
       <input
+      value={form.email}
         placeholder="Email"
         onChange={(e) =>
           setForm({ ...form, email: e.target.value })
@@ -33,18 +34,20 @@ export function Login() {
       />
 
       <input
+        value={form.password}
         type="password"
         placeholder="Senha"
         onChange={(e) =>
           setForm({ ...form, password: e.target.value })
         }
+        className ="border p-2 w-100"
       />
 
-      <button disabled={loading}>
+      <button disabled={loading} className="bg-black text-white px-4 py-2 w-100">
         {loading ? 'Entrando...' : 'Login'}
       </button>
 
-      {error && <p>{error}</p>}
+      {error && <p className="text-darnger text-sm">{error}</p>}
     </form>
   )
 }

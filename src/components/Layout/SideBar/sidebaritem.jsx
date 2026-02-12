@@ -1,4 +1,4 @@
-export function SideBarItem({
+export function SidebarItem({
     icon,
     active = false,
     badge

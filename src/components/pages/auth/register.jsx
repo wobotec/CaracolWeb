@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
 
-export function Register() {
+export default function Register() {
   const { register, loading, error } = useAuth()
   const navigate = useNavigate()
 

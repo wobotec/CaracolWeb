@@ -1,21 +1,16 @@
-import { useAuthStore } from '@/stores/auth.store'
-const { register } = useAuthStore()
+import { useAuthStore } from '../stores/auth.store'
 
 export function useAuth() {
-  const {
-    login,
-    logout,
-    loading,
-    error,
-    token,
-  } = useAuthStore()
+  const store = useAuthStore()
 
   return {
-    login,
-    logout,
-    loading,
-    error,
-    isAuthenticated: !!token,
+    login: store.login,
+    logout: store.logout,
+    register: store.register,
+    loading: store.loading,
+    error: store.error,
+    token: store.token,
+    user: store.user,
+    isAuthenticated: !!store.token,
   }
 }
-
