@@ -1,4 +1,4 @@
-export function Button({ children, variant = 'primary' }){
+export default function button({ children, variant = 'primary' }){
     const base = "px-4 py-2 rounded-md bg-primary text-white hover:bg-primaryDark transition";
 
     const variants = {
