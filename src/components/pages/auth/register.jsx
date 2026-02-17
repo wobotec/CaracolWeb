@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
+import { Input } from '../../Input/input'
 
 export default function Register() {
   const { register, loading, error } = useAuth()
@@ -15,15 +16,22 @@ export default function Register() {
     confirmPassword: '',
   })
 
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+
   const nextStep = () => {
     if (step === 1 && (!form.name || !form.email)) return
-    if (
-      step === 2 &&
-      (!form.password || form.password !== form.confirmPassword)
-    )
-      return
+    if (step === 2 && (!form.password || form.password !== form.confirmPassword)) return
 
     setStep(step + 1)
+  }
+
+  const prevStep = () => {
+    setStep(step - 1)
   }
 
   const handleSubmit = async (e) => {
@@ -33,61 +41,92 @@ export default function Register() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Registro – Passo {step}</h2>
+    <div className=" vw-100 vh-100 d-flex justify-content-center align-items-center">
+      <div className="card shadow p-4" style={{width: "400px", height: "400px"}}>
+        
+        <h3 className="text-center mb-4">
+          Registro
+        </h3>
 
-      {/* STEP 1 */}
-      {step === 1 && (
-        <>
-          <input
-            placeholder="Nome"
-            onChange={(e) =>
-              setForm({ ...form, name: e.target.value })
-            }
-          />
+        <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100"> 
 
-          <input
-            placeholder="Email"
-            onChange={(e) =>
-              setForm({ ...form, email: e.target.value })
-            }
-          />
+          {/* STEP 1 */}
+          {step === 1 && (
+            <>
+              <Input
+                label="Nome"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Digite seu nome"
+              />
 
-          <button type="button" onClick={nextStep}>
-            Próximo
-          </button>
-        </>
-      )}
+              <Input
+                label="Email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Digite seu email"
+              />
 
-      {/* STEP 2 */}
-      {step === 2 && (
-        <>
-          <input
-            type="password"
-            placeholder="Senha"
-            onChange={(e) =>
-              setForm({ ...form, password: e.target.value })
-            }
-          />
+              <button
+                type="button"
+                className="btn btn-primary w-100"
+                onClick={nextStep}
+              >
+                Próximo
+              </button>
+            </>
+          )}
 
-          <input
-            type="password"
-            placeholder="Confirmar senha"
-            onChange={(e) =>
-              setForm({
-                ...form,
-                confirmPassword: e.target.value,
-              })
-            }
-          />
+          {/* STEP 2 */}
+          {step === 2 && (
+            <>
+              <Input
+                label="Senha"
+                name="password"
+                type="password"
+                value={form.password}
+                onChange={handleChange}
+                placeholder="Digite sua senha"
+              />
 
-          <button type="submit" disabled={loading}>
-            {loading ? 'Registrando...' : 'Finalizar'}
-          </button>
-        </>
-      )}
+              <Input
+                label="Confirmar senha"
+                name="confirmPassword"
+                type="password"
+                value={form.confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirme a senha"
+              />
 
-      {error && <p>{error}</p>}
-    </form>
+              <div className="d-flex gap-2">
+                <button
+                  type="button"
+                  className="btn btn-secondary w-50"
+                  onClick={prevStep}
+                >
+                  Voltar
+                </button>
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="btn btn-success w-60"
+                >
+                  {loading ? 'Registrando...' : 'Finalizar'}
+                </button>
+              </div>
+            </>
+          )}
+
+          {error && (
+            <p className="text-danger mt-3 text-center">
+              {error}
+            </p>
+          )}
+        </form>
+      </div>
+    </div>
   )
 }

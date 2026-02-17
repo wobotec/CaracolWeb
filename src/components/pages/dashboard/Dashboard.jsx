@@ -5,28 +5,75 @@ export default function Dashboard() {
   const { user, logout } = useAuth()
 
   return (
-    <div className="p-6 space-y-6">
-      
+    <div className="container-fluid py-4 px-4 " >
+
       {/* HEADER */}
-      <div className="flex items-center justify-between">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <p className="text-sm text-gray-500">
-            Bem-vindo, {user?.name}
-          </p>
+          <h2 className="fw-bold mb-0">Caracol</h2>
+          <small className="text-muted">
+            Complexo Escolar Fonte de Saber
+          </small>
+          <small className="text-muted">
+            Ano lectivo
+          </small>
         </div>
 
-        <button
-          onClick={logout}
-          className="px-4 py-2 bg-red-500 text-white rounded"
-        >
-          Logout
-        </button>
+        <div className="d-flex align-items-center gap-3">
+          <span className="text-muted">
+            Time
+          </span>
+
+        </div>
       </div>
 
-      {/* WIDGET GRID */}
-      <DashboardGrid />
+      {/* CARDS DE ESTATÍSTICAS */}
+      <div className="row g-4 mb-4">
 
+        <div className="col-md-3">
+          <div className="card shadow-sm border-0">
+            <div className="card-body">
+              <h6 className="text-muted">Alunos</h6>
+              <h3 className="fw-bold">320</h3>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-3">
+          <div className="card shadow-sm border-0">
+            <div className="card-body">
+              <h6 className="text-muted">Professores</h6>
+              <h3 className="fw-bold">25</h3>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-3">
+          <div className="card shadow-sm border-0">
+            <div className="card-body">
+              <h6 className="text-muted">Turmas</h6>
+              <h3 className="fw-bold">18</h3>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-3">
+          <div className="card shadow-sm border-0">
+            <div className="card-body">
+              <h6 className="text-muted">Funcionários</h6>
+              <h3 className="fw-bold">12</h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      {/* GRID DE WIDGETS */}
+      <DashboardGrid />
+      <footer className="d-flex justify-content-between align-items-center mb-4">
+       Footer
+     </footer>
     </div>
+    
   )
 }

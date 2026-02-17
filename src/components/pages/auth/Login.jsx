@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
+import { Input } from '../../Input/input'
 
 export default function Login() {
   const { login, loading, error, isAuthenticated } = useAuth()
@@ -22,32 +23,45 @@ export default function Login() {
     if (!form.email || !form.password) return
     await login(form)
   }
-
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    })
+  }
+  
   return (
-    <form onSubmit={handleSubmit} className="py-3">
-      <input
-      value={form.email}
-        placeholder="Email"
-        onChange={(e) =>
-          setForm({ ...form, email: e.target.value })
-        }
+    <div className=" d-flex justify-content-center align-items-center min-vh-100 vw-100  bg-light" >
+      <div className=" card shadow p-4" style={{width: "400px", height: "400px"}}>
+      <h3 className="text-center mb-4">
+        Login
+      </h3>
+     <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">
+       <Input
+        label="Email"
+        name="email"
+        value={form.email}
+        onChange={handleChange}
+        placeholder="Digite seu email"
       />
 
-      <input
-        value={form.password}
+      <Input
+        label="Senha"
+        name="password"
         type="password"
-        placeholder="Senha"
-        onChange={(e) =>
-          setForm({ ...form, password: e.target.value })
-        }
-        className ="border p-2 w-100"
+        value={form.password}
+        onChange={handleChange}
+        placeholder="Digite sua senha"
       />
 
-      <button disabled={loading} className="bg-black text-white px-4 py-2 w-100">
+
+      <button disabled={loading} className="btn btn-primary text-white px-4 py-2 w-100">
         {loading ? 'Entrando...' : 'Login'}
       </button>
 
       {error && <p className="text-darnger text-sm">{error}</p>}
     </form>
+    </div>
+  </div>
   )
 }

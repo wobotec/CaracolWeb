@@ -1,5 +1,5 @@
 //TOKEN DE CORES 22/01/2026
-export default{
+/*export default{
     darkMode: 'class',
     theme: {
         extend: {
@@ -20,7 +20,7 @@ export default{
                 darkText: '#E5E7EB',
             },
             fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif' /*Caso nenhuma dessa for carregadas para carregar uma sem serif*/], 
+                sans: ['Inter', 'system-ui', 'sans-serif' /*Caso nenhuma dessa for carregadas para carregar uma sem serif*//*], 
             },
             fontSize: {
                 xs: '12px',
@@ -38,4 +38,4 @@ export default{
             }
         }
     }
-}
+}*/

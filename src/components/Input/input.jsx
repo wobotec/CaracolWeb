@@ -1,45 +1,39 @@
 export function Input({
     label,
+    name,
     type = "text",
     placeholder,
     error,
-    disable = false,
-}){
+    disabled = false,
+    value,
+    onChange,
+  }) {
     return (
-        <div className="flex flex-col gap-1">
-            {label && (
-                <label className="text-sm font-medium text-textPrimary dark:text-darkText">
-                    {label}
-                </label>
-            )}
-            <input
-            type ={type}
-            placeholder={placeholder}
-            disabled={disable}
-             className={`
-                px-3
-                py-3
-                rounded-md
-                border
-                text-sm
-                bg-white
-                dark:text-darkText
-                dark:bg-darkSurface
-                text-textPrimary
-                dark:text-darkText
-                placeholder:text-textSecondary
-                focus:outline-none
-                focus:ring-2 
-                focus:ring-primary
-                ${error ? "border-red-500 focus:ring-red-500" : "border-border"}
-                ${disabled ? "opacity-50 cursor-not-allowed" : ""}
-                `}
-             />
-             {error && (
-                <span className="text-xs text-red-600">
-                    {error}
-                </span>
-             )}
-        </div>
+      <div className="mb-3 w-100">
+  
+        {label && (
+          <label className="form-label fw-semibold mb-2">
+            {label}
+          </label>
+        )}
+  
+        <input
+          type={type}
+          name={name}
+          className={`form-control form-control-lg ${error ? "is-invalid" : ""}`}
+          placeholder={placeholder}
+          disabled={disabled}
+          value={value}
+          onChange={onChange}
+        />
+  
+        {error && (
+          <div className="invalid-feedback">
+            {error}
+          </div>
+        )}
+        
+      </div>
     )
-}
+  }
+  

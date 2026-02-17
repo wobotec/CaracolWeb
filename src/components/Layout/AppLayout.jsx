@@ -1,24 +1,24 @@
-import { Outlet } from 'react-router-dom'
-import { Navbar } from './NavBar'
-import { Sidebar } from './SideBar'
-import { Footer } from './Footer'
-import { Breadcrumbs } from './Breadcrumbs'
+import { Outlet } from "react-router-dom"
+import  Sidebar  from "./SideBar/sidebar"
+import Topbar from "./TopBar/topBar"
 
- export default function AppLayout() {
+export default function AppLayout() {
   return (
-    <div className="d-flex vh-100">
+    <div className="d-flex ">
+
+      {/* SIDEBAR */}
       <Sidebar />
 
-      <div className="d-flex flex-column">
-        <Navbar title="Dashboard" />
-        <Breadcrumbs />
+      {/* CONTEÚDO */}
+      <div className="flex-grow-1">
 
-        <main className="d-flex p-6 bg-secondary ">
+        <Topbar />
+
+        <main className="p-4 bg-light min-vh-100 vw-100" >
           <Outlet />
         </main>
 
-        <Footer />
       </div>
     </div>
   )
-} 
+}

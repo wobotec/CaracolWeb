@@ -1,52 +1,71 @@
-import { useState } from "react"
-import {
-  DndContext,
-  closestCenter,
-} from "@dnd-kit/core"
-
-import {
-  SortableContext,
-  arrayMove,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable"
-
-import StatsWidget from "./StatsWidget"
-import ChartWidget from "./ChartWidget"
-import CalendarWidget from "./CalendarWidget"
-import TasksWidget from "./TasksWidget"
-
 export default function DashboardGrid() {
-  const [widgets, setWidgets] = useState([
-    { id: "stats", component: <StatsWidget /> },
-    { id: "chart", component: <ChartWidget /> },
-    { id: "calendar", component: <CalendarWidget /> },
-    { id: "tasks", component: <TasksWidget /> },
-  ])
-
-  function handleDragEnd(event) {
-    const { active, over } = event
-    if (active.id !== over.id) {
-      const oldIndex = widgets.findIndex(w => w.id === active.id)
-      const newIndex = widgets.findIndex(w => w.id === over.id)
-
-      setWidgets(arrayMove(widgets, oldIndex, newIndex))
-    }
-  }
-
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-      <SortableContext items={widgets} strategy={verticalListSortingStrategy}>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {widgets.map((w) => (
+    <div className="row g-4">
+
+      {/* GRÁFICO */}
+      <div className="col-lg-8">
+        <div className="card shadow-sm border-0 h-100">
+          <div className="card-body">
+            <h5 className="mb-3">Frequência mensal</h5>
+
             <div
-              key={w.id}
-              className="bg-white dark:bg-zinc-900 p-4 rounded-xl shadow"
+              style={{
+                height: "250px",
+                background: "#f8f9fa",
+                borderRadius: "8px"
+              }}
+              className="d-flex align-items-center justify-content-center text-muted"
             >
-              {w.component}
+              gráfico aqui
             </div>
-          ))}
+
+          </div>
         </div>
-      </SortableContext>
-    </DndContext>
+      </div>
+
+      {/* TAREFAS */}
+      <div className="col-lg-4">
+        <div className="card shadow-sm border-0 h-100">
+          <div className="card-body">
+            <h5 className="mb-3">Tarefas pendentes</h5>
+
+            <ul className="list-group list-group-flush">
+              <li className="list-group-item">
+                Lançar notas
+              </li>
+              <li className="list-group-item">
+                Validar matrículas
+              </li>
+              <li className="list-group-item">
+                Reunião pedagógica
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      {/* CALENDÁRIO */}
+      <div className="col-12">
+        <div className="card shadow-sm border-0">
+          <div className="card-body">
+            <h5 className="mb-3">Eventos próximos</h5>
+
+            <div
+              style={{
+                height: "200px",
+                background: "#f8f9fa",
+                borderRadius: "8px"
+              }}
+              className="d-flex align-items-center justify-content-center text-muted"
+            >
+              calendário aqui
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
   )
 }
