@@ -8,6 +8,10 @@ import Dashboard from '../pages/dashboard/Dashboard'
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
 
+import Profile from "../pages/user/Profile/Profile";
+import Settings from "../pages/user/Settings/Settings";
+
+
 
 export default function AppRoutes() {
   return (
@@ -16,17 +20,22 @@ export default function AppRoutes() {
 <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-      </Route>
+        
+    </Route>
 
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/perfil" element={<Profile />} />
+        <Route path="/configuracoes" element={<Settings />} />
         </Route>
       </Route>
 
      <Route path="*" element={<NotFound />} />    
+
       
+
       </Routes> 
     
 
