@@ -5,7 +5,7 @@ export default function Dashboard() {
   const { user, logout } = useAuth()
 
   return (
-    <div className="container-fluid py-4 px-4 " >
+    <div className="container-fluid" >
 
       {/* HEADER */}
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -70,8 +70,8 @@ export default function Dashboard() {
 
       {/* GRID DE WIDGETS */}
       <DashboardGrid />
-      <footer className="d-flex justify-content-between align-items-center mb-4">
-       Footer
+      <footer className="bg-white border-top px-4 pt-4 d-flex justify-content-between align-items-center ">
+       Caracol@2026
      </footer>
     </div>
     

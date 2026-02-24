@@ -4,7 +4,7 @@ import Topbar from "./TopBar/topBar"
 
 export default function AppLayout() {
   return (
-    <div className="d-flex ">
+    <div className="d-flex vw-100">
 
       {/* SIDEBAR */}
       <Sidebar />
@@ -14,7 +14,7 @@ export default function AppLayout() {
 
         <Topbar />
 
-        <main className="p-4 bg-light min-vh-100 vw-100" >
+        <main className="p-4 bg-light min-vh-100" >
           <Outlet />
         </main>
 
