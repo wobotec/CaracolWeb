@@ -3,14 +3,22 @@ import ProfilePhoto from "./ProfilePhoto";
 
 export default function Profile() {
   return (
-    <div className="container mt-4">
-      <h2>Meu Perfil</h2>
-      <div className="row">
-        <div className="col-md-4">
-          <ProfilePhoto />
-        </div>
-        <div className="col-md-8">
-          <ProfileForm />
+    <div className="min-vh-100 min-vw-100 d-flex py-4 justify-content-center bg-primary">
+      <div className="container ">
+        <div className="row justify-content-center">
+          <div className="col-12 col-lg-10">
+            <h2 className="text-center mb-4">Meu Perfil</h2>
+
+            <div className="row g-4">
+              <div className="col-12 col-md-4">
+                <ProfilePhoto />
+              </div>
+
+              <div className="col-12 col-md-8">
+                <ProfileForm />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
