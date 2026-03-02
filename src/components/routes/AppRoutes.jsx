@@ -7,6 +7,8 @@ import Login from '../pages/auth/Login'
 import Dashboard from '../pages/dashboard/Dashboard'
 import StudentList from '../pages/students/StudentsList'
 import StudentForm from '../pages/students/StudentForm'
+import SchoolForm from '../pages/school/SchoolForm';
+import SchoolList from '../pages/school/SchoolList';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
 
@@ -31,6 +33,8 @@ export default function AppRoutes() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
+          <Route path="/escolas/nova" element={<SchoolForm />} />
+          <Route path="/escolas" element={<SchoolList />} />
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>
