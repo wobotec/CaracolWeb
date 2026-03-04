@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import  DataTable  from '../../Table/DataTable';
 import AdvancedFilters from '../../filters/AdvancedFilters';
-import ExportButtons from '../../export/ExportButtons';
+{/*import ExportButtons from '../../export/ExportButtons';*/}
 
 export default function StudentsList() {
     const [students, setStudents] = useState([]);
@@ -29,7 +29,7 @@ export default function StudentsList() {
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                     />
-                    <ExportButtons data={students} />
+               {/*     <ExportButtons data={students} /> */}
                 </div>
                 {/* Filtros avançados */}
                 <AdvancedFilters onChange={setFilters} />

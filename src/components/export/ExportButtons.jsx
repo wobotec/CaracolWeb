@@ -1,4 +1,4 @@
-import * as XLSX from 'xlsx';
+{/* import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
 export default function ExportButtons ({ data }) {
@@ -25,4 +25,4 @@ export default function ExportButtons ({ data }) {
             <button className="btn btn-outline-secondary" onClick={exportCSV}>Exportar CSV</button>
         </div>
     );
-}
+}*/}
