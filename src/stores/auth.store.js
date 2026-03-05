@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
-import { loginRequest } from '../serveces/authService'
-import { registerRequest } from '../serveces/authService'
+import { loginRequest } from '../services/authService'
+import { registerRequest } from '../services/authService'
 
 export const useAuthStore = create(
   persist(
