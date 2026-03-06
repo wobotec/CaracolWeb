@@ -11,6 +11,7 @@ import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
 import DepartmentsList from '../pages/department/DepartmentsList';
+import Services from '../pages/services/Services';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
 
@@ -39,6 +40,7 @@ export default function AppRoutes() {
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
           <Route path="/departamentos" element={<DepartmentsList />} />
+          <Route path="/servicos" element={<Services />} />
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>
