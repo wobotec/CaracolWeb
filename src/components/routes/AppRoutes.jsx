@@ -39,7 +39,6 @@ export default function AppRoutes() {
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
           <Route path="/departamentos" element={<DepartmentsList />} />
-
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>
