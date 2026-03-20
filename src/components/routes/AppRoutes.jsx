@@ -14,7 +14,8 @@ import DepartmentsList from '../pages/department/DepartmentsList';
 import Services from '../pages/services/Services';
 import NotFound from '../pages/notFound/NotFound'
 import Register from '../pages/auth/register'
-
+import Classes from '../pages/classes/Classes';
+import Disciplina from '../pages/disciplina/DisciplinesPage'
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 
@@ -41,6 +42,8 @@ export default function AppRoutes() {
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
           <Route path="/departamentos" element={<DepartmentsList />} />
           <Route path="/servicos" element={<Services />} />
+          <Route path="/Classe" element={<Classes />} />
+          <Route path='/Disciplina' element={<Disciplina />} />
           <Route path="/perfil" element={<Profile />} />
         <Route path="/configuracoes" element={<Settings />} />
         </Route>

@@ -7,10 +7,10 @@ export function SidebarItem({
       <div className="relative">
         <button
           className={`
-            w-12 h-12 flex items-center justify-center rounded-xl
+            w-12 h-12 flex items-center justify-center 
             transition
             ${active
-              ? "bg-white text-primary"
+              ? " text-primary"
               : "text-white hover:bg-white/20"
             }
           `}

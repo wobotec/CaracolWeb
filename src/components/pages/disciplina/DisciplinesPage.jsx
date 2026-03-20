@@ -1,6 +1,6 @@
-import DisciplineFilter from "./DisciplineFilter"
-import DisciplineInfo from "./DisciplineInfo"
-import DisciplineTable from "./DisciplineTable"
+import DisciplineFilter from "../../disciplines/DisciplineFilter"
+import DisciplineInfo from "../../disciplines/DisciplineInfo"
+import DisciplineTable from "../../disciplines/DisciplineTable"
 
 export default function DisciplinesPage(){
 

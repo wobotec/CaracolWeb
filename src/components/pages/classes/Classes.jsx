@@ -1,0 +1,66 @@
+import { useState } from "react"
+import { courses, classData } from "./mockClass"
+import CourseFilter from "../../Classes/CourseFilter"
+import ClassTable from "../../Classes/ClassTable"
+import ClassModal from "../../Classes/ClassModal"
+
+export default function Classes() {
+    const [selectedCourse, setSelectedCourse] = useState("")
+    const [classes, setClasses] = useState(classData)
+    const [showModal, setShowModal] = useState(false)
+    const [editing, setEditing] = useState(null)
+
+    const filterClasses = classes.filter(
+        c => c.courseId == selectedCourse
+    )
+    const addClass = (data) => {
+        if (editing) {
+            setClasses(classes.map(c => c.id === editing.id ? { ...editing, ...data } : c))
+            setEditing(null)
+        } else {
+            const newClass = {
+                id: Data.now(),
+                courseId: Number(selectedCourse),
+                ...data
+            }
+            setClasses([...classes, newClass])
+        }
+    }
+    const deleteClass = (id) => {
+        setClasses(classes.filter(c => c.id !== id))
+    }
+    return (
+        <div className="container mt-4">
+            <div className="row">
+                <div className="col-md-3">
+                    <CourseFilter
+                        courses={courses}
+                        selected={selectedCourse}
+                        onSelect={setSelectedCourse} />
+                </div>
+                <div className="col-md-9">
+                    <div className="d-flex justify-content-between mb-3">
+                        <h4>Classes</h4>
+                        <button
+                            className="btn btn-primary"
+                            onClick={() => setShowModal(true)}>Nova
+                        </button>
+                    </div>
+                    <ClassTable
+                        classes={filterClasses}
+                        onEdit={(c) => {
+                            setEditing(c)
+                            setShowModal(true)
+                        }}
+                        onDelete={deleteClass} />
+                </div>
+            </div>
+            <ClassModal
+                show={showModal}
+                onClose={() => setShowModal(false)}
+                onSave={addClass}
+                editing={editing}
+            />
+        </div>
+    )
+}
