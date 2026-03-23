@@ -27,27 +27,35 @@ export default function ClassModal({ show, onClose, onSave, editing}){
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title">
-                            {editing ? "Editar Classe" : "Nova Classe"}
+                            {editing ? "Editar Turma" : "Nova Turma"}
                         </h5>
                         <button className="btn-close" onClick={onClose}></button>
                     </div>
                     <div className="modal-body">
                         <input 
                             className="form-control mb-3"
-                            name="name"
-                            placeholder="Nome da classe"
-                            value={form.name}
+                            name="turma"
+                            placeholder="Turma"
                             onChange={handleChange}
                         />
-                        <select 
-                            className="form-select"
-                            name="type"
-                            value={form.type}
+                        <input 
+                            className="form-control mb-3"
+                            name="periodo"
+                            placeholder="Período"
                             onChange={handleChange}
-                        >
-                            <option>Transição</option>
-                            <option>Exame</option>
-                        </select>
+                        />
+                        <input 
+                            className="form-control mb-3"
+                            name="lotacao"
+                            placeholder="Lotação"
+                            onChange={handleChange}
+                        />
+                        <input 
+                            className="form-control mb-3"
+                            name="sala"
+                            placeholder="Sala"
+                            onChange={handleChange}
+                        />
                     </div>
                     <div className="modal-footer">
                         <button 
