@@ -91,7 +91,7 @@ export default function Sidebar() {
       {/* MENU */}
       <ul className="nav flex-column gap-2">
         {menu.map((item) => (
-          <li key={item.path}>
+          <li key={item.name}>
             {item.submenu ? (
               <>
                 <button

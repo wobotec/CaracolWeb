@@ -1,112 +1,85 @@
-import { useState } from "react";
+import {useState, useEffect} from "react"
+export default function ClassModal({ show, onClose, onSave, editing }) {
 
-export default function ClassModal({addClass,close}){
 
-const [turma,setTurma] = useState("")
-const [periodo,setPeriodo] = useState("")
-const [lotacao,setLotacao] = useState("")
-const [sala,setSala] = useState("")
+    const [form, setForm] = useState({
+        name: "",
+        type: "Transição"
+    })
+    useEffect(() =>{
+        if(editing){
+            setForm(editing)
+        }
+    }, [editing])
 
-function handleSubmit(e){
+    const handleChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        })
+    }
+    const handleSubmit = () => {
+        onSave(form)
+        onClose()
+    }
 
-e.preventDefault()
+    if (!show) return null;
 
-addClass({
+    return (
+        <>
+            {/* BACKDROP */}
+            <div className="modal-backdrop fade show"></div>
 
-id:Date.now(),
-turma,
-periodo,
-lotacao,
-sala
+            {/* MODAL */}
+            <div className="modal fade show d-block">
+                <div className="modal-dialog">
+                    <div className="modal-content">
 
-})
+                        <div className="modal-header">
+                            <h5>{editing ? "Editar Classe" : "Nova Classe"}</h5>
+                            <button
+                                className="btn-close"
+                                onClick={onClose}
+                            ></button>
+                        </div>
+                        <div className="modal-body">
+                            <input 
+                                className="form-control mb-3"
+                                name="name"
+                                placeholder="Nome da classe"
+                                value={form.name}
+                                onChange={handleChange}
+                            />
+                            <select 
+                                className="form-select"
+                                name="type"
+                                value={form.type}
+                                onChange={handleChange}
+                            >
+                                <option>Transição</option>
+                                <option>Exame</option>
+                            </select>
+                        </div>
 
-}
+                        <div className="modal-footer">
+                            <button
+                                className="btn btn-secondary"
+                                onClick={onClose}
+                            >
+                                Cancelar
+                            </button>
 
-return(
+                            <button
+                                className="btn btn-primary"
+                                onClick={handleSubmit}
+                            >
+                                Salvar
+                            </button>
+                        </div>
 
-<div className="modal d-block">
-
-<div className="modal-dialog">
-
-<div className="modal-content">
-
-<div className="modal-header">
-
-<h5>Nova Turma</h5>
-
-<button
-className="btn-close"
-onClick={close}
-></button>
-
-</div>
-
-<form onSubmit={handleSubmit}>
-
-<div className="modal-body">
-
-<label>Turma</label>
-<input
-className="form-control mb-2"
-value={turma}
-onChange={(e)=>setTurma(e.target.value)}
-required
-/>
-
-<label>Período</label>
-<input
-className="form-control mb-2"
-value={periodo}
-onChange={(e)=>setPeriodo(e.target.value)}
-required
-/>
-
-<label>Lotação</label>
-<input
-className="form-control mb-2"
-value={lotacao}
-onChange={(e)=>setLotacao(e.target.value)}
-required
-/>
-
-<label>Sala</label>
-<input
-className="form-control"
-value={sala}
-onChange={(e)=>setSala(e.target.value)}
-required
-/>
-
-</div>
-
-<div className="modal-footer">
-
-<button
-type="button"
-className="btn btn-secondary"
-onClick={close}
->
-Cancelar
-</button>
-
-<button
-type="submit"
-className="btn btn-primary"
->
-Salvar
-</button>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-)
-
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
