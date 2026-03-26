@@ -23,6 +23,7 @@ export default function Sidebar() {
         { name: "Lista de Alunos", path: "/alunos" },
         { name: "Cadastrar Aluno", path: "/alunos/novo" },
         { name: "Confirmar Aluno", path: "/alunos/confirmacao" },
+        { name: "Alunos", path: "/alunos/index" },
       ],
     },
     { icon: faUsers, name: "Professores", path: "/professores" },
