@@ -1,23 +1,24 @@
 import { Outlet } from "react-router-dom"
-import  Sidebar  from "./SideBar/sidebar"
+import Sidebar from "./SideBar/sidebar"
+import Sidebar1 from "./SideBar/Sidebar1"
 import Topbar from "./TopBar/topBar"
+import Footer from "./Footer.jsx"
 
-export default function AppLayout() {
+export default function AppLayout(props) {
   return (
-    <div className="d-flex vw-100">
+    <div id="wrapper">
 
       {/* SIDEBAR */}
       <Sidebar />
 
       {/* CONTEÚDO */}
-      <div className="flex-grow-1">
+      <div id="page-wrapper" className="gray-bg">
 
         <Topbar />
 
-        <main className="p-4 bg-light min-vh-100" >
-          <Outlet />
-        </main>
+        {props.children}
 
+        <Footer />
       </div>
     </div>
   )

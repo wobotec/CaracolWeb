@@ -1,3 +1,17 @@
+import iconProfile from "./../../../assets/img/profile_small.jpg";
+
+import iconbooks from "./../../../assets/img/Icons/books.png";
+import iconhome from "./../../../assets/img/Icons/home.png";
+import iconmoney from "./../../../assets/img/Icons/money.png";
+import iconprint from "./../../../assets/img/Icons/print.png";
+import icontransport from "./../../../assets/img/Icons/transport.png";
+import iconorder from "./../../../assets/img/Icons/order.png";
+import iconsettings from "./../../../assets/img/Icons/settings.png";
+import iconsms from "./../../../assets/img/Icons/sms.png";
+import iconstaff from "./../../../assets/img/Icons/staff.png";
+import iconStud from "./../../../assets/img/Icons/student.png";
+import iconSmall from "./../../../assets/img/logo_small.png";
+
 import { Link, useLocation } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth"
 import { useState } from "react"
@@ -36,7 +50,8 @@ export default function Sidebar() {
         { name: "Disciplina", path: "/Disciplina" },
       ],
     },
-    { icon: faSackDollar, name: "Financeiro",
+    {
+      icon: faSackDollar, name: "Financeiro",
       submenu: [
         { name: "Serviços", path: "/servicos" },
         { name: "Custo serviço", path: "/custo-servico" },
@@ -44,14 +59,14 @@ export default function Sidebar() {
     },
     { icon: faBus, name: "Transporte", path: "/transporte" },
     { icon: faPrint, name: "Relatórios", path: "/relatorios" },
-    { 
-      icon: faGear, 
-      name: "Definicao", 
+    {
+      icon: faGear,
+      name: "Definicao",
       submenu: [
-        { name: "Ano Lectivo", path: "/ano-lectivo"},
-        { name: "Departamento", path: "/departamentos"},
-        { name: "Configuracao", path: "/escolas"},
-      ], 
+        { name: "Ano Lectivo", path: "/ano-lectivo" },
+        { name: "Departamento", path: "/departamentos" },
+        { name: "Configuracao", path: "/escolas" },
+      ],
     },
   ]
 
@@ -63,29 +78,29 @@ export default function Sidebar() {
         minHeight: "100vh",
       }}
     >
-      {/* LOGO */}
+  {/* Perfil */}
       <div className="d-flex align-items-center gap-3 p-4">
         <div className="dropdown profile-element">
           <span>
             <img alt="foto perfil" className="rounded-circle" src="img/profile_small.jpg" />
           </span>
-          <div>  
-          <a data-toggle="dropdown" className="dropdown-toggle" href="#">
+          <div>
+            <a data-toggle="dropdown" className="dropdown-toggle" href="#">
               <span className="block m-t-xs">
                 <strong className="font-bold text-white">
                   {user?.name}
                 </strong>
               </span> <br />
               <span className="text-muted text-xs block">Director </span>
-            
-          </a>
-          <ul className="dropdown-menu animated fadeInRight m-t-xs">
-            <li><a className="dropdown-item"  href="#profile.html">Perfil</a></li>
-            <li><a className="dropdown-item" href="#contacts.html">Contactos</a></li>
-            <li className="divider"></li>
-            <li><a className="dropdown-item" href="login.html">Logout</a></li>
-          </ul>
-        </div>
+
+            </a>
+            <ul className="dropdown-menu animated fadeInRight m-t-xs">
+              <li><a className="dropdown-item" href="#profile.html">Perfil</a></li>
+              <li><a className="dropdown-item" href="#contacts.html">Contactos</a></li>
+              <li className="divider"></li>
+              <li><a className="dropdown-item" href="login.html">Logout</a></li>
+            </ul>
+          </div>
         </div>
         <div className="logo-element">
           <img alt="image" src="img/logo_small.png" />
@@ -99,9 +114,8 @@ export default function Sidebar() {
               <>
                 <button
                   type="button"
-                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${
-                    location.pathname.startsWith(item.path) ? "fw-bold" : ""
-                  }`}
+                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${location.pathname.startsWith(item.path) ? "fw-bold" : ""
+                    }`}
                   onClick={() => toggleMenu(item.name)}
                   style={{ textDecoration: "none" }}
                 >
