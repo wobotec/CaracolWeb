@@ -8,6 +8,8 @@ import Dashboard from '../pages/dashboard/Dashboard'
 import StudentList from '../pages/students/StudentsList'
 import StudentForm from '../pages/students/StudentForm'
 import StudentsAcademico from '../pages/students/StudentsAcademico';
+import StudentConfirm from '../pages/students/StudentConfirm'
+import StudentPage from '../pages/students/StudentPage'
 import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
@@ -32,14 +34,13 @@ export default function AppRoutes() {
         <Route path="/register" element={<Register />} />
         
     </Route>
-
+    
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/alunos" element={<StudentList />} />
           <Route path="/alunos/novo" element={<StudentForm />} />
-          <Route path="/alunos/academico" element={<StudentsAcademico />} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />

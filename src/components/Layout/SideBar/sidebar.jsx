@@ -23,6 +23,8 @@ export default function Sidebar() {
         { name: "Lista de Alunos", path: "/alunos" },
         { name: "Cadastrar Aluno", path: "/alunos/novo" },
         { name: "Dados Academicos", path: "/alunos/academico" },
+        { name: "Confirmar Aluno", path: "/alunos/confirmacao" },
+        { name: "Alunos", path: "/alunos/index" },
       ],
     },
     { icon: faUsers, name: "Professores", path: "/professores" },
@@ -92,7 +94,7 @@ export default function Sidebar() {
       {/* MENU */}
       <ul className="nav flex-column gap-2">
         {menu.map((item) => (
-          <li key={item.path}>
+          <li key={item.name}>
             {item.submenu ? (
               <>
                 <button

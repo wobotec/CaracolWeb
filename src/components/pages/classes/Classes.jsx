@@ -1,14 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { courses, classData } from "./mockClass"
 import CourseFilter from "../../Classes/CourseFilter"
 import ClassTable from "../../Classes/ClassTable"
-import ClassModal from "../../Classes/ClassModal"
+import ClassModal from "../../classes/ClassModal"
+import TurmaModal from '../../Turma/TurmaModal'
 
 export default function Classes() {
     const [selectedCourse, setSelectedCourse] = useState("")
     const [classes, setClasses] = useState(classData)
     const [showModal, setShowModal] = useState(false)
+    const [showModalTurma, setShowModalTurma ] = useState(true)
     const [editing, setEditing] = useState(null)
+
+    useEffect(() => {
+        console.log('showModalTurma changed:', showModalTurma);
+    }, [showModalTurma])
 
     const filterClasses = classes.filter(
         c => c.courseId == selectedCourse
@@ -19,7 +25,7 @@ export default function Classes() {
             setEditing(null)
         } else {
             const newClass = {
-                id: Data.now(),
+                id: Date.now(),
                 courseId: Number(selectedCourse),
                 ...data
             }
@@ -60,6 +66,10 @@ export default function Classes() {
                 onClose={() => setShowModal(false)}
                 onSave={addClass}
                 editing={editing}
+            />
+             <TurmaModal
+                show={showModalTurma}
+                onClose={() => setShowModalTurma(false) }
             />
         </div>
     )
