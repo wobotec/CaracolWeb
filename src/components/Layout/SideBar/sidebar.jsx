@@ -1,3 +1,17 @@
+import iconProfile from "./../../../assets/img/profile_small.jpg";
+
+import iconbooks from "./../../../assets/img/Icons/books.png";
+import iconhome from "./../../../assets/img/Icons/home.png";
+import iconmoney from "./../../../assets/img/Icons/money.png";
+import iconprint from "./../../../assets/img/Icons/print.png";
+import icontransport from "./../../../assets/img/Icons/transport.png";
+import iconorder from "./../../../assets/img/Icons/order.png";
+import iconsettings from "./../../../assets/img/Icons/settings.png";
+import iconsms from "./../../../assets/img/Icons/sms.png";
+import iconstaff from "./../../../assets/img/Icons/staff.png";
+import iconStud from "./../../../assets/img/Icons/student.png";
+import iconSmall from "./../../../assets/img/logo_small.png";
+
 import { Link, useLocation } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth"
 import { useState } from "react"
@@ -6,7 +20,7 @@ import { faHouse, faCommentSms, faUserGraduate, faUsers, faFile, faPrint, faSack
 
 export default function Sidebar() {
   const location = useLocation()
-  const { user, logout } = useAuth()
+  const { user } = useAuth()
   const [openMenu, setOpenMenu] = useState(null)
 
   const toggleMenu = (name) => {
@@ -14,45 +28,97 @@ export default function Sidebar() {
   }
 
   const menu = [
-    { icon: faHouse, name: "Dashboard", path: "/" },
-    { icon: faCommentSms, name: "MSM", path: "/mensagem" },
+    {
+      icon: faHouse,
+      name: "Home | Dashboard",
+      submenu: [
+        { name: "Home", path: "/Dashboard/" },
+        { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
+        { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
+        { name: "Dashboard 3", path: "/Dashboard/Dashboard3" }, ,
+      ],
+    },
+    { icon: faCommentSms, name: "SMS | Email", path: "/mensagem" },
     {
       icon: faUserGraduate,
-      name: "Alunos",
+      name: "Aluno",
       submenu: [
-        { name: "Lista de Alunos", path: "/alunos" },
-        { name: "Cadastrar Aluno", path: "/alunos/novo" },
-        { name: "Dados Academicos", path: "/alunos/academico" },
-        { name: "Confirmar Aluno", path: "/alunos/confirmacao" },
-        { name: "Alunos", path: "/alunos/index" },
+        { name: "Inscrição", path: "/alunos" },
+        { name: "Confirmação", path: "/alunos/confirmacao" },
+        { name: "Dados Academicos", path: "/alunos/confirmacao" },
+        { name: "Dados Pessoais", path: "/alunos/academico" },
+        { name: "Suspensão", path: "/alunos/suspensao" },
       ],
     },
-    { icon: faUsers, name: "Professores", path: "/professores" },
+    {
+      icon: faUsers,
+      name: "Funcionários",
+      submenu: [
+        { name: "Administrativos", path: "/professores" },
+        { name: "Professores", path: "/professores" },
+        { name: "Utilizadores", path: "/professores" },
+      ],
+    },
     {
       icon: faFile,
-      name: "Implementação",
+      name: "Implementações",
       submenu: [
         { name: "Classes", path: "/Classe" },
-        { name: "Disciplina", path: "/Disciplina" },
+        { name: "Curso", path: "/Curso" },
+        { name: "classe", path: "/classe" },
+        { name: "Turma", path: "/Turma" },
+        { name: "Horário", path: "/Horario" },
       ],
     },
-    { icon: faSackDollar, name: "Financeiro",
+    {
+      icon: faFile,
+      name: "Pedagógico",
       submenu: [
-        { name: "Serviços", path: "/servicos" },
-        { name: "Custo serviço", path: "/custo-servico" },
+        { name: "Lançamento de notas", path: "/Classe" },
+        { name: "Cumprimento de notas", path: "/Curso" },
+        { name: "Notas implantadas", path: "/classe" },
+        { name: "Transição de classe", path: "/Turma" },
+      ],
+    },
+    {
+      icon: faSackDollar, name: "Finanças",
+      submenu: [
+        { name: "Pagamentos", path: "/Pagamentos" },
+        { name: "Despesas", path: "/Despesas" },
+        { name: "Acumulados", path: "/Acumulados" },
+        { name: "Estatísticas financeira", path: "/Acumulados" },
+        { name: "Banco", path: "/Acumulados" },
       ]
     },
-    { icon: faBus, name: "Transporte", path: "/transporte" },
-    { icon: faPrint, name: "Relatórios", path: "/relatorios" },
-    { 
-      icon: faGear, 
-      name: "Definicao", 
+    {
+      icon: faBus, name: "Serviço de Transporte",
       submenu: [
-        { name: "Ano Lectivo", path: "/ano-lectivo"},
-        { name: "Departamento", path: "/departamentos"},
-        { name: "Configuracao", path: "/escolas"},
-      ], 
+        { name: "Viaturas", path: "/Viaturas" },
+        { name: "Controlo de Rotas", path: "/Despesas" },
+        { name: "Controlo de pessageiros", path: "/Acumulados" },
+        { name: "Pagamentos", path: "/Acumulados" },
+        { name: "Custos", path: "/Acumulados" },
+      ]
     },
+    {
+      icon: faPrint, name: "Impressões",
+      submenu: [
+        { name: "Imp. Administrativas", path: "/Viaturas" },
+        { name: "Imp. Pedagógicas", path: "/Despesas" },
+        { name: "Imp. Finançeiras", path: "/Acumulados" },       
+      ]
+    },    
+    {
+      icon: faGear,
+      name: "Definições",
+      submenu: [
+        { name: "Ano lectivo", path: "/ano-lectivo" },
+        { name: "Departamento", path: "/departamentos" },
+        { name: "Serviços", path: "/escolas" },
+        { name: "Custo de serviços", path: "/escolas" },
+        { name: "Configurações", path: "/escolas" },
+      ],
+    },    
   ]
 
   return (
@@ -63,29 +129,29 @@ export default function Sidebar() {
         minHeight: "100vh",
       }}
     >
-      {/* LOGO */}
+      {/* Perfil */}
       <div className="d-flex align-items-center gap-3 p-4">
         <div className="dropdown profile-element">
           <span>
             <img alt="foto perfil" className="rounded-circle" src="img/profile_small.jpg" />
           </span>
-          <div>  
-          <a data-toggle="dropdown" className="dropdown-toggle" href="#">
+          <div>
+            <a data-toggle="dropdown" className="dropdown-toggle" href="#">
               <span className="block m-t-xs">
                 <strong className="font-bold text-white">
                   {user?.name}
                 </strong>
               </span> <br />
               <span className="text-muted text-xs block">Director </span>
-            
-          </a>
-          <ul className="dropdown-menu animated fadeInRight m-t-xs">
-            <li><a className="dropdown-item"  href="#profile.html">Perfil</a></li>
-            <li><a className="dropdown-item" href="#contacts.html">Contactos</a></li>
-            <li className="divider"></li>
-            <li><a className="dropdown-item" href="login.html">Logout</a></li>
-          </ul>
-        </div>
+
+            </a>
+            <ul className="dropdown-menu animated fadeInRight m-t-xs">
+              <li><a className="dropdown-item" href="#profile.html">Perfil</a></li>
+              <li><a className="dropdown-item" href="#contacts.html">Contactos</a></li>
+              <li className="divider"></li>
+              <li><a className="dropdown-item" href="login.html">Logout</a></li>
+            </ul>
+          </div>
         </div>
         <div className="logo-element">
           <img alt="image" src="img/logo_small.png" />
@@ -99,9 +165,8 @@ export default function Sidebar() {
               <>
                 <button
                   type="button"
-                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${
-                    location.pathname.startsWith(item.path) ? "fw-bold" : ""
-                  }`}
+                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${location.pathname.startsWith(item.path) ? "fw-bold" : ""
+                    }`}
                   onClick={() => toggleMenu(item.name)}
                   style={{ textDecoration: "none" }}
                 >
