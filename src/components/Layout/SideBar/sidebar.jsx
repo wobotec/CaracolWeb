@@ -27,18 +27,27 @@ export default function Sidebar() {
     setOpenMenu((current) => (current === name ? null : name))
   }
 
-  const menu = [
-    { icon: faHouse, name: "Dashboard", path: "/" },
-    { icon: faCommentSms, name: "MSM", path: "/mensagem" },
+  const menu = [    
+    {
+      icon: faHouse,
+      name: "Home | Dashboard",
+      submenu: [
+        { name: "Home", path: "/Dashboard/" },
+        { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
+        { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
+        { name: "Dashboard 3", path: "/Dashboard/Dashboard3" },        ,
+      ],
+    },
+    { icon: faCommentSms, name: "SMS | Email", path: "/mensagem" },
     {
       icon: faUserGraduate,
-      name: "Alunos",
+      name: "Aluno",
       submenu: [
-        { name: "Lista de Alunos", path: "/alunos" },
-        { name: "Cadastrar Aluno", path: "/alunos/novo" },
-        { name: "Dados Academicos", path: "/alunos/academico" },
-        { name: "Confirmar Aluno", path: "/alunos/confirmacao" },
-        { name: "Alunos", path: "/alunos/index" },
+        { name: "Inscrição", path: "/alunos" },
+        { name: "Confirmação", path: "/alunos/confirmacao" },
+        { name: "Dados Academicos", path: "/alunos/confirmacao" },
+        { name: "Dados Pessoais", path: "/alunos/academico" },        
+        { name: "Suspensão", path: "/alunos/suspensao" },
       ],
     },
     { icon: faUsers, name: "Professores", path: "/professores" },
