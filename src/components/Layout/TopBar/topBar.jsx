@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const TopBar = () => {
   return ( <>
   <div className="row border-bottom">
@@ -8,7 +10,7 @@ const TopBar = () => {
               </a>
           </div>
           <ul className="nav navbar-top-links navbar-right">
-              <li><a><i className="fa fa-lock"></i></a></li>
+              <li><Link to="/lockscreen"><i className="fa fa-lock"></i></Link></li>
 
               <li className="dropdown">
                   <a className="dropdown-toggle count-info" data-toggle="dropdown" href="#">

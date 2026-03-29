@@ -1,40 +1,40 @@
-import { Routes, Route} from 'react-router-dom'
-import   AppLayout   from '../Layout/AppLayout'
+import { Routes, Route } from 'react-router-dom'
+import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
 import AuthLayout from '../Layout/AuthLayout';
 
-import Login from '../pages/auth/Login'
-import Dashboard from '../pages/dashboard/Dashboard'
-import StudentList from '../pages/students/StudentsList'
-import StudentForm from '../pages/students/StudentForm'
+import Login from '../pages/auth/Login';
+import Dashboard from '../pages/dashboard/Dashboard';
+import StudentList from '../pages/students/StudentsList';
+import StudentForm from '../pages/students/StudentForm';
 import StudentsAcademico from '../pages/students/StudentsAcademico';
-import StudentConfirm from '../pages/students/StudentConfirm'
-import StudentPage from '../pages/students/StudentPage'
+import StudentConfirm from '../pages/students/StudentConfirm';
+import StudentPage from '../pages/students/StudentPage';
 import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
 import DepartmentsList from '../pages/department/DepartmentsList';
 import Services from '../pages/services/Services';
-import NotFound from '../pages/notFound/NotFound'
-import Register from '../pages/auth/register'
+import NotFound from '../pages/notFound/NotFound';
+import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
-import Disciplina from '../pages/disciplina/DisciplinesPage'
-import ServiceCostPage from '../pages/service-cost/ServiceCostPage'
+import Disciplina from '../pages/disciplina/DisciplinesPage';
+import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
+import Lockscreen from '../pages/lockscreen/lockscreen';
 
 
 
 export default function AppRoutes() {
   return (
-     <Routes>
+    <Routes>
 
-<Route element={<AuthLayout />}>
+      <Route element={<AuthLayout />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        
-    </Route>
-    
+      </Route>
+
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>
@@ -49,17 +49,18 @@ export default function AppRoutes() {
           <Route path="/Classe" element={<Classes />} />
           <Route path='/Disciplina' element={<Disciplina />} />
           <Route path='/custo-servico' element={<ServiceCostPage />} />
-          <Route path="/perfil" element={<Profile />} />
-        <Route path="/configuracoes" element={<Settings />} />
+          <Route path="/perfil" element={<Profile />} />        
+          <Route path="/configuracoes" element={<Settings />} />
         </Route>
       </Route>
 
-     <Route path="*" element={<NotFound />} />    
+      <Route path="*" element={<NotFound />} />
+      <Route path="/lockscreen" element={<Lockscreen />} />
 
-      
 
-      </Routes> 
-    
+
+    </Routes>
+
 
   )
 }

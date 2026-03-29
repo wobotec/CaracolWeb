@@ -14,28 +14,21 @@ import iconSmall from "./../../../assets/img/logo_small.png";
 
 import { Link, useLocation } from "react-router-dom"
 import { useAuth } from "../../../hooks/useAuth"
-import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHouse, faCommentSms, faUserGraduate, faUsers, faFile, faPrint, faSackDollar, faGear, faBus } from "@fortawesome/free-solid-svg-icons"
 
 const Sidebar = () => {
     const location = useLocation()
-    const { user } = useAuth()
-    const [openMenu, setOpenMenu] = useState(null)
-
-    const toggleMenu = (name) => {
-        setOpenMenu((current) => (current === name ? null : name))
-    }
+    const { user } = useAuth()    
 
     const menu = [
         {
             icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
-                { name: "Home", path: "/Dashboard/" },
+                { name: "Home", path: "/Dashboard/Dashboard" },
                 { name: "Dashboard 1", path: "/Dashboard/Dashboard1" },
                 { name: "Dashboard 2", path: "/Dashboard/Dashboard2" },
-                { name: "Dashboard 3", path: "/Dashboard/Dashboard3" }, ,
+                { name: "Dashboard 3", path: "/Dashboard/Dashboard3" },
             ],
         },
         { icon: iconsms, name: "SMS | Email", path: "/mensagem" },
@@ -43,10 +36,10 @@ const Sidebar = () => {
             icon: iconStud,
             name: "Aluno",
             submenu: [
-                { name: "Inscrição", path: "/alunos" },
+                { name: "Inscrição", path: "/alunos/novo" },
                 { name: "Confirmação", path: "/alunos/confirmacao" },
-                { name: "Dados Academicos", path: "/alunos/confirmacao" },
-                { name: "Dados Pessoais", path: "/alunos/academico" },
+                { name: "Dados Academicos", path: "/alunos/index" },
+                { name: "Dados Pessoais", path: "/alunos" },
                 { name: "Suspensão", path: "/alunos/suspensao" },
             ],
         },
@@ -63,10 +56,10 @@ const Sidebar = () => {
             icon: iconbooks,
             name: "Implementações",
             submenu: [
-                { name: "Classes", path: "/Classe" },
                 { name: "Curso", path: "/Curso" },
-                { name: "classe", path: "/classe" },
+                { name: "Classe", path: "/Classe" },                            
                 { name: "Turma", path: "/Turma" },
+                { name: "Discplina", path: "/Disciplina" },
                 { name: "Horário", path: "/Horario" },
             ],
         },
@@ -103,9 +96,9 @@ const Sidebar = () => {
         {
             icon: iconprint, name: "Impressões",
             submenu: [
-                { name: "Imp. Administrativas", path: "/Viaturas" },
-                { name: "Imp. Pedagógicas", path: "/Despesas" },
-                { name: "Imp. Finançeiras", path: "/Acumulados" },
+                { name: "Imp. Administrativas", path: "/relatorios" },
+                { name: "Imp. Pedagógicas", path: "/relatorios" },
+                { name: "Imp. Finançeiras", path: "/relatorios" },
             ]
         },
         {
@@ -114,8 +107,8 @@ const Sidebar = () => {
             submenu: [
                 { name: "Ano lectivo", path: "/ano-lectivo" },
                 { name: "Departamento", path: "/departamentos" },
-                { name: "Serviços", path: "/escolas" },
-                { name: "Custo de serviços", path: "/escolas" },
+                { name: "Serviços", path: "/servicos" },
+                { name: "Custo de serviços", path: "/custo-servico" },
                 { name: "Configurações", path: "/escolas" },
             ],
         },
@@ -151,7 +144,7 @@ const Sidebar = () => {
                         </div>
                     </li>
 
-                    { /*  =================== Área de teste =================*/}
+                    { /*  =================== Menu =================*/}
 
                     {menu.map((item) => (
                         <li key={item.name}>
@@ -168,7 +161,7 @@ const Sidebar = () => {
                                     </ul>
                                 </>
                             ) : (<>
-                                <Link to={item.path} className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                <Link to={item.path} className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
                                     <img src={item.icon} style={{ marginRight: "5px" }} /> <span> {item.name}</span>
                                 </Link>
 
@@ -176,30 +169,7 @@ const Sidebar = () => {
                             </>)}
                         </li>
                     ))}
-                    { /*  =====================================================*/}
-
-                    <li>
-                        <a href="#">
-                            <img src={iconprint} /> <span className="nav-label">Impressões </span><span className="fa arrow"></span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li> <a href="#">Imp. Administrativas</a></li>
-                            <li> <a href="#">Imp. Pedagógicas</a></li>
-                            <li> <a href="#">Imp. Finançeiras</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src={iconsettings} /> <span className="nav-label">Definições </span><span className="fa arrow"></span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li> <a href="Index">Ano lectivo</a></li>
-                            <li> <a href="#">Departamento</a></li>
-                            <li> <a href="#">Serviços</a></li>
-                            <li> <a href="#">Custo de serviços</a></li>
-                            <li> <a href="Index">Configurações</a></li>
-                        </ul>
-                    </li>
+                    { /*  =====================================================*/}                                    
 
                 </ul>
             </div>

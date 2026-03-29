@@ -1,4 +1,3 @@
-import { useAuth } from '../../../hooks/useAuth'
 import DashboardGrid from '../../../components/dashboard/DashboardGrid'
 
 import { useEffect, useState } from "react";
