@@ -40,7 +40,7 @@ const Dashboard1 = () => {
                 <div className="col-lg-8 navbar-left">
                     <h1>Caracol</h1>
                     <p>Complexo Escolar Fonte de Saber</p>
-                    <p>Ano lectivo: 20205-2026</p>
+                    <p>Ano lectivo: 2025-2026</p>
                 </div>
 
                 <div className="col-lg-3 navbar-right">

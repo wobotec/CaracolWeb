@@ -3,10 +3,11 @@ export default function NotFound() {
     <body class="gray-bg">
       <div class="middle-box text-center animated fadeInDown">
         <h1>404</h1>
-        <h3 class="font-bold">Página não encontrada</h3>
+        <h3 class="font-bold">PErro do Servidor Interno</h3>
 
         <div class="error-desc">
-          Desculpe, mas a página que você está procurando não foi encontrada. Verifique se há erros na URL e, em seguida, clique no botão de atualizar do seu navegador ou tente acessar outra página em nosso aplicativo.          
+        O servidor encontrou um problema inesperado que impediu a conclusão da solicitação. Pedimos desculpas.
+        Você pode voltar à página principal:
           <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
         </div>
       </div>
