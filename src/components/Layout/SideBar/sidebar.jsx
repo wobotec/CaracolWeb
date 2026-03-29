@@ -105,9 +105,9 @@ export default function Sidebar() {
       submenu: [
         { name: "Imp. Administrativas", path: "/Viaturas" },
         { name: "Imp. Pedagógicas", path: "/Despesas" },
-        { name: "Imp. Finançeiras", path: "/Acumulados" },       
+        { name: "Imp. Finançeiras", path: "/Acumulados" },
       ]
-    },    
+    },
     {
       icon: faGear,
       name: "Definições",
@@ -118,7 +118,7 @@ export default function Sidebar() {
         { name: "Custo de serviços", path: "/escolas" },
         { name: "Configurações", path: "/escolas" },
       ],
-    },    
+    },
   ]
 
   return (
@@ -192,6 +192,7 @@ export default function Sidebar() {
                 </ul>
               </>
             ) : (
+              <li>
               <Link
                 to={item.path}
                 className={`nav-link text-white ${location.pathname === item.path ? "fw-bold" : ""}`}
@@ -200,6 +201,7 @@ export default function Sidebar() {
                 <FontAwesomeIcon icon={item.icon} className="me-2" />
                 {item.name}
               </Link>
+              </li>
             )}
           </li>
         ))}

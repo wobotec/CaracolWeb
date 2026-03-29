@@ -29,7 +29,7 @@ const Menu = () => {
 
     const menu = [
         {
-            icon: faHouse,
+            icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
                 { name: "Home", path: "/Dashboard/" },
@@ -38,9 +38,9 @@ const Menu = () => {
                 { name: "Dashboard 3", path: "/Dashboard/Dashboard3" }, ,
             ],
         },
-        { icon: faCommentSms, name: "SMS | Email", path: "/mensagem" },
+        { icon: iconsms, name: "SMS | Email", path: "/mensagem" },
         {
-            icon: faUserGraduate,
+            icon: iconStud,
             name: "Aluno",
             submenu: [
                 { name: "Inscrição", path: "/alunos" },
@@ -51,7 +51,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faUsers,
+            icon: iconstaff,
             name: "Funcionários",
             submenu: [
                 { name: "Administrativos", path: "/professores" },
@@ -60,7 +60,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faFile,
+            icon: iconbooks,
             name: "Implementações",
             submenu: [
                 { name: "Classes", path: "/Classe" },
@@ -71,7 +71,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faFile,
+            icon: iconorder,
             name: "Pedagógico",
             submenu: [
                 { name: "Lançamento de notas", path: "/Classe" },
@@ -81,7 +81,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faSackDollar, name: "Finanças",
+            icon: iconmoney, name: "Finanças",
             submenu: [
                 { name: "Pagamentos", path: "/Pagamentos" },
                 { name: "Despesas", path: "/Despesas" },
@@ -91,7 +91,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faBus, name: "Serviço de Transporte",
+            icon: icontransport, name: "Serviço de Transporte",
             submenu: [
                 { name: "Viaturas", path: "/Viaturas" },
                 { name: "Controlo de Rotas", path: "/Despesas" },
@@ -101,7 +101,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faPrint, name: "Impressões",
+            icon: iconprint, name: "Impressões",
             submenu: [
                 { name: "Imp. Administrativas", path: "/Viaturas" },
                 { name: "Imp. Pedagógicas", path: "/Despesas" },
@@ -109,7 +109,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faGear,
+            icon: iconsettings,
             name: "Definições",
             submenu: [
                 { name: "Ano lectivo", path: "/ano-lectivo" },
@@ -124,6 +124,7 @@ const Menu = () => {
         <nav className="navbar-default navbar-static-side" role="navigation">
             <div className="sidebar-collapse">
                 <ul className="nav metismenu" id="side-menu">
+                    { /*  =================== Perfil =================*/}
                     <li className="nav-header">
                         <div className="dropdown profile-element">
                             <span>
@@ -150,151 +151,33 @@ const Menu = () => {
                         </div>
                     </li>
 
-                    { /*  =================== Área de teste =================*/ }
+                    { /*  =================== Área de teste =================*/}
 
                     {menu.map((item) => (
-          <li key={item.name}>
-            {item.submenu ? (
-              <>
-                <button
-                  type="button"
-                  className={`btn btn-link text-start w-100 text-white d-flex align-items-center justify-content-between ${location.pathname.startsWith(item.path) ? "fw-bold" : ""
-                    }`}
-                  onClick={() => toggleMenu(item.name)}
-                  style={{ textDecoration: "none" }}
-                >
-                  <span>
-                    <FontAwesomeIcon icon={item.icon} className="me-2" />
-                    {item.name}
-                  </span>
-                  <span className="ms-2">{openMenu === item.name ? "▾" : "▸"}</span>
-                </button>
+                        <li key={item.name}>
+                            {item.submenu ? (
+                                <>
+                                    <a className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                        <img style={{ marginRight: "5px" }} src={item.icon} /> <span className="nav-label">  {item.name}</span></a>
+                                    <ul className="nav nav-second-level collapse">
+                                        {item.submenu.map((sub) => (
+                                            <li key={sub.path}>
+                                                <Link to={sub.path}>{sub.name} </Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </>
+                            ) : (<>
+                                <Link to={item.path} className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                    <img src={item.icon} style={{ marginRight: "5px" }} /> <span> {item.name}</span>
+                                </Link>
 
-                <ul className={`nav flex-column ps-3 ${openMenu === item.name ? "d-block" : "d-none"}`}>
-                  {item.submenu.map((sub) => (
-                    <li key={sub.path}>
-                      <Link
-                        to={sub.path}
-                        className={`nav-link text-white py-1 ${location.pathname === sub.path ? "fw-bold" : ""}`}
-                        style={{ borderLeft: location.pathname === sub.path ? "3px solid white" : "none" }}
-                      >
-                        {sub.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <Link
-                to={item.path}
-                className={`nav-link text-white ${location.pathname === item.path ? "fw-bold" : ""}`}
-                style={{ borderLeft: location.pathname === item.path ? "3px solid white" : "none" }}
-              >
-                <FontAwesomeIcon icon={item.icon} className="me-2" />
-                {item.name}
-              </Link>
-            )}
-          </li>
-        ))}
-        
-                    <li>
-                        <a href="index" ><img src={iconhome} /><span> Home</span></a>
-                    </li>
-                    { /*  =====================================================*/ }
 
-                    <li>
-                        <a href="index" ><img src={iconhome} /><span> Home</span></a>
-                    </li>
-                    <li>
-                        <a href="#layouts.html"><img src={iconsms} /><span className="nav-label"> SMS | Email</span></a>
-                    </li>
-                    <li>
-                        <a><img src={iconStud} /> <span className="nav-label"> Aluno</span></a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="index">Inscrição</a></li>
-                            <li><a href="Index">Confirmação</a></li>
-                            <li><a href="Index">Dados Académicos</a></li>
-                            <li><a href="DadosPessoais">Dados Pessoais</a></li>
-                            <li><a href="Index">Suspensão</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconstaff} /><span className="nav-label">
-                                Funcionários
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Administrativos</a></li>
-                            <li><a href="Index">Professores</a></li>
-                            <li><a href="Index">Utilizadores</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconbooks} /><span className="nav-label">
-                                Implementações
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Curso" >Curso</a></li>
-                            <li><a href="classNamee">classNamee</a></li>
-                            <li><a href="Aluno" >Turma</a></li>
-                            <li><a href="Discplinas">Discplinas</a></li>
-                            <li><a href="Alyno" >Horário</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconorder} /><span className="nav-label">
-                                Pedagógico
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Lançamento de notas</a></li>
-                            <li><a href="Index">Cumprimento de notas</a></li>
-                            <li><a href="Index">Notas implantadas</a></li>
-                            <li><a href="Index">Transição de classNamee</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconmoney} /><span className="nav-label">
-                                Finanças
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Pagamentos</a></li>
-                            <li><a href="Index">Despesas</a></li>
-                            <li><a href="Index">Acumulados</a></li>
-                            <li>
-                                <a href="#">Estatísticas financeira<span className="fa arrow"></span></a>
-                                <ul className="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Estatística financeira</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Estatísticas em tempo real</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="Index">Banco</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={icontransport} /><span className="nav-label">
-                                Serviço de Transporte
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Viaturas</a></li>
-                            <li><a href="Index">Controlo de Rotas</a></li>
-                            <li><a href="Index">Controlo de pessageiros</a></li>
-                            <li><a href="Index">Pagamentos</a></li>
-                            <li><a href="Index">Custos</a></li>
-                        </ul>
-                    </li>
+                            </>)}
+                        </li>
+                    ))}
+                    { /*  =====================================================*/}
+
                     <li>
                         <a href="#">
                             <img src={iconprint} /> <span className="nav-label">Impressões </span><span className="fa arrow"></span>

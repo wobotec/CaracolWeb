@@ -1,79 +1,63 @@
 import { useAuth } from '../../../hooks/useAuth'
 import DashboardGrid from '../../../components/dashboard/DashboardGrid'
 
-export default function Dashboard() {
-  const { user, logout } = useAuth()
+import { useEffect, useState } from "react";
+import iconCaracol from "./../../../assets/img/COLEGIAL.png";
+import './Dashboard.css'
 
-  return (
-    <div className="container-fluid" >
+const diasSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
 
-      {/* HEADER */}
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <div>
-          <h2 className="fw-bold mb-0">Caracol</h2>
-          <small className="text-muted">
-            Complexo Escolar Fonte de Saber
-          </small>
-          <small className="text-muted">
-            Ano lectivo
-          </small>
-        </div>
+const Dashboard1 = () => {
+    const [hora, setHora] = useState("");
+    const [data, setData] = useState("");
 
-        <div className="d-flex align-items-center gap-3">
-          <span className="text-muted">
-            Time
-          </span>
+    useEffect(() => {
+        const atualizar = () => {
+            const agora = new Date();
 
-        </div>
-      </div>
+            const h = String(agora.getHours()).padStart(2, '0');
+            const m = String(agora.getMinutes()).padStart(2, '0');
+            const s = String(agora.getSeconds()).padStart(2, '0');
+            setHora(`${h}:${m}:${s}`);
 
-      {/* CARDS DE ESTATÍSTICAS */}
-      <div className="row g-4 mb-4">
+            const dia = diasSemana[agora.getDay()];
+            const num = agora.getDate();
+            const mes = meses[agora.getMonth()];
+            const ano = agora.getFullYear();
+            setData(`${dia}, ${num} de ${mes} de ${ano}`);
+        };
 
-        <div className="col-md-3">
-          <div className="card shadow-sm border-0">
-            <div className="card-body">
-              <h6 className="text-muted">Alunos</h6>
-              <h3 className="fw-bold">320</h3>
+        atualizar();
+        const interval = setInterval(atualizar, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <>
+            <div className="row wrapper border-bottom page-heading">
+                <div className="col-lg-8 navbar-left">
+                    <h1>Caracol</h1>
+                    <p>Complexo Escolar Fonte de Saber</p>
+                    <p>Ano lectivo: 20205-2026</p>
+                </div>
+
+                <div className="col-lg-3 navbar-right">
+                    <center>
+                        <h1><strong>{hora}</strong> </h1>
+                        <p>{data}</p>
+                    </center>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <div className="col-md-3">
-          <div className="card shadow-sm border-0">
-            <div className="card-body">
-              <h6 className="text-muted">Professores</h6>
-              <h3 className="fw-bold">25</h3>
+            <div>
+                <center>
+                    <img className="logo" src={iconCaracol} alt="Caracol Image" />
+                </center>
             </div>
-          </div>
-        </div>
-
-        <div className="col-md-3">
-          <div className="card shadow-sm border-0">
-            <div className="card-body">
-              <h6 className="text-muted">Turmas</h6>
-              <h3 className="fw-bold">18</h3>
-            </div>
-          </div>
-        </div>
-
-        <div className="col-md-3">
-          <div className="card shadow-sm border-0">
-            <div className="card-body">
-              <h6 className="text-muted">Funcionários</h6>
-              <h3 className="fw-bold">12</h3>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      {/* GRID DE WIDGETS */}
-      <DashboardGrid />
-      <footer className="bg-white border-top px-4 pt-4 d-flex justify-content-between align-items-center ">
-       Caracol@2026
-     </footer>
-    </div>
-    
-  )
+        </>
+    );
 }
+
+export default Dashboard1;
