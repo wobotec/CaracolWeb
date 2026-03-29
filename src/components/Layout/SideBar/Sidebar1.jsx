@@ -40,7 +40,7 @@ const Menu = () => {
         },
         { icon: iconsms, name: "SMS | Email", path: "/mensagem" },
         {
-            icon: faUserGraduate,
+            icon: iconStud,
             name: "Aluno",
             submenu: [
                 { name: "Inscrição", path: "/alunos" },
@@ -51,7 +51,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faUsers,
+            icon: iconstaff,
             name: "Funcionários",
             submenu: [
                 { name: "Administrativos", path: "/professores" },
@@ -60,7 +60,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faFile,
+            icon: iconbooks,
             name: "Implementações",
             submenu: [
                 { name: "Classes", path: "/Classe" },
@@ -71,7 +71,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faFile,
+            icon: iconorder,
             name: "Pedagógico",
             submenu: [
                 { name: "Lançamento de notas", path: "/Classe" },
@@ -81,7 +81,7 @@ const Menu = () => {
             ],
         },
         {
-            icon: faSackDollar, name: "Finanças",
+            icon: iconmoney, name: "Finanças",
             submenu: [
                 { name: "Pagamentos", path: "/Pagamentos" },
                 { name: "Despesas", path: "/Despesas" },
@@ -91,7 +91,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faBus, name: "Serviço de Transporte",
+            icon: icontransport, name: "Serviço de Transporte",
             submenu: [
                 { name: "Viaturas", path: "/Viaturas" },
                 { name: "Controlo de Rotas", path: "/Despesas" },
@@ -101,7 +101,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faPrint, name: "Impressões",
+            icon: iconprint, name: "Impressões",
             submenu: [
                 { name: "Imp. Administrativas", path: "/Viaturas" },
                 { name: "Imp. Pedagógicas", path: "/Despesas" },
@@ -109,7 +109,7 @@ const Menu = () => {
             ]
         },
         {
-            icon: faGear,
+            icon: iconsettings,
             name: "Definições",
             submenu: [
                 { name: "Ano lectivo", path: "/ano-lectivo" },
@@ -157,16 +157,8 @@ const Menu = () => {
                         <li key={item.name}>
                             {item.submenu ? (
                                 <>
-                                    <a                                       
-                                        className={` ${location.pathname.startsWith(item.path) ? "active" : ""
-                                            }`}
-                                        onClick={() => toggleMenu(item.name)}
-                                        style={{ textDecoration: "none" }}
-                                    >
-                                        <span>
-                                            <FontAwesomeIcon icon={item.icon} className="me-2" />
-                                            {item.name}
-                                        </span>                                                                         
+                                    <a className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                    <img src={item.icon} style={{ marginRight: "8px" }}/><span> {item.name} </span> 
                                     </a>
                                     
                                     <ul className="nav nav-second-level collapse">
@@ -178,10 +170,11 @@ const Menu = () => {
                                     </ul>
                                 </>
                             ) : (
-                                <li>
+                                <li>                                  
                                     <Link to={item.path} className={`${location.pathname === item.path ? "active" : ""}`}>
                                         <img src={item.icon} /> <span> {item.name}</span>
                                     </Link>
+                                   
                                 </li>
                             )}
                         </li>
@@ -191,12 +184,8 @@ const Menu = () => {
                     </li>
                     { /*  =====================================================*/}
 
-                    <li>
-                        <a href="index" ><img src={iconhome} /><span> Home</span></a>
-                    </li>
-                    <li>
-                        <a href="#layouts.html"><img src={iconsms} /><span className="nav-label"> SMS | Email</span></a>
-                    </li>
+                    
+                     
                     <li>
                         <a> <span className="nav-label"> <img src={iconStud} /> Aluno</span></a>
                         <ul className="nav nav-second-level collapse">
