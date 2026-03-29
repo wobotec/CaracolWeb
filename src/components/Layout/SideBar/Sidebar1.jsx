@@ -29,7 +29,7 @@ const Menu = () => {
 
     const menu = [
         {
-            icon: faHouse,
+            icon: iconhome,
             name: "Home | Dashboard",
             submenu: [
                 { name: "Home", path: "/Dashboard/" },
@@ -157,10 +157,8 @@ const Menu = () => {
                         <li key={item.name}>
                             {item.submenu ? (
                                 <>
-                                    <a className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
-                                    <img src={item.icon} style={{ marginRight: "8px" }}/><span> {item.name} </span> 
-                                    </a>
-                                    
+                                    <a className={`${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                        <img style={{ marginRight: "5px" }} src={item.icon} /> <span className="nav-label">  {item.name}</span></a>
                                     <ul className="nav nav-second-level collapse">
                                         {item.submenu.map((sub) => (
                                             <li key={sub.path}>
@@ -169,110 +167,17 @@ const Menu = () => {
                                         ))}
                                     </ul>
                                 </>
-                            ) : (
-                                <li>                                  
-                                    <Link to={item.path} className={`${location.pathname === item.path ? "active" : ""}`}>
-                                        <img src={item.icon} /> <span> {item.name}</span>
-                                    </Link>
-                                   
-                                </li>
-                            )}
+                            ) : (<>
+                                <Link to={item.path} className={`nav-label ${location.pathname.startsWith(item.path) ? "active" : "" }`}>
+                                    <img src={item.icon} style={{ marginRight: "5px" }} /> <span> {item.name}</span>
+                                </Link>
+
+
+                            </>)}
                         </li>
                     ))}
-                    <li>
-                        <a href="index" ><img src={iconhome} /><span> Home</span></a>
-                    </li>
                     { /*  =====================================================*/}
 
-                    
-                     
-                    <li>
-                        <a> <span className="nav-label"> <img src={iconStud} /> Aluno</span></a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="index">Inscrição</a></li>
-                            <li><a href="Index">Confirmação</a></li>
-                            <li><a href="Index">Dados Académicos</a></li>
-                            <li><a href="DadosPessoais">Dados Pessoais</a></li>
-                            <li><a href="Index">Suspensão</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconstaff} /><span className="nav-label">
-                                Funcionários
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Administrativos</a></li>
-                            <li><a href="Index">Professores</a></li>
-                            <li><a href="Index">Utilizadores</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconbooks} /><span className="nav-label">
-                                Implementações
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Curso" >Curso</a></li>
-                            <li><a href="classNamee">classNamee</a></li>
-                            <li><a href="Aluno" >Turma</a></li>
-                            <li><a href="Discplinas">Discplinas</a></li>
-                            <li><a href="Alyno" >Horário</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconorder} /><span className="nav-label">
-                                Pedagógico
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Lançamento de notas</a></li>
-                            <li><a href="Index">Cumprimento de notas</a></li>
-                            <li><a href="Index">Notas implantadas</a></li>
-                            <li><a href="Index">Transição de classNamee</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={iconmoney} /><span className="nav-label">
-                                Finanças
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Pagamentos</a></li>
-                            <li><a href="Index">Despesas</a></li>
-                            <li><a href="Index">Acumulados</a></li>
-                            <li>
-                                <a href="#">Estatísticas financeira<span className="fa arrow"></span></a>
-                                <ul className="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Estatística financeira</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Estatísticas em tempo real</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li><a href="Index">Banco</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="mailbox.html">
-                            <img src={icontransport} /><span className="nav-label">
-                                Serviço de Transporte
-                            </span>
-                        </a>
-                        <ul className="nav nav-second-level collapse">
-                            <li><a href="Index">Viaturas</a></li>
-                            <li><a href="Index">Controlo de Rotas</a></li>
-                            <li><a href="Index">Controlo de pessageiros</a></li>
-                            <li><a href="Index">Pagamentos</a></li>
-                            <li><a href="Index">Custos</a></li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="#">
                             <img src={iconprint} /> <span className="nav-label">Impressões </span><span className="fa arrow"></span>
