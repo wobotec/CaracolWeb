@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function NotFound() {
   return (
     <body class="gray-bg">
@@ -7,7 +9,8 @@ export default function NotFound() {
 
         <div class="error-desc">
           Desculpe, mas a página que você está procurando não foi encontrada. Verifique se há erros na URL e, em seguida, clique no botão de atualizar do seu navegador ou tente acessar outra página em nosso aplicativo.          
-          <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
+          <br/><Link to="/"   className="btn btn-primary m-t">Dashboard</Link>
+          
         </div>
       </div>
     </body>

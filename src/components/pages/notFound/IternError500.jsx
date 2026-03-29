@@ -6,9 +6,9 @@ export default function NotFound() {
         <h3 class="font-bold">PErro do Servidor Interno</h3>
 
         <div class="error-desc">
-        O servidor encontrou um problema inesperado que impediu a conclusão da solicitação. Pedimos desculpas.
-        Você pode voltar à página principal:
-          <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
+          O servidor encontrou um problema inesperado que impediu a conclusão da solicitação. Pedimos desculpas.
+          Você pode voltar à página principal:
+          <br /><Link to="/" className="btn btn-primary m-t">Dashboard</Link>
         </div>
       </div>
     </body>
