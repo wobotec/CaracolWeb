@@ -1,9 +1,19 @@
 export default function NotFound() {
-    return (
-      <div className="d-flex flex-column align-items-center justify-content-center vh-100 vw-100">
-        <h1 className=" fw-bold">404</h1>
-        <p className="text-secondary mt-2">Página não encontrada</p>
+  return (
+    <body class="gray-bg">
+
+
+      <div class="middle-box text-center animated fadeInDown">
+        <h1>404</h1>
+        <h3 class="font-bold">Página não encontrada</h3>
+
+        <div class="error-desc">
+          Desculpe, mas a página que você está procurando não foi encontrada. Verifique se há erros na URL e, em seguida, clique no botão de atualizar do seu navegador ou tente acessar outra página em nosso aplicativo.
+        </div>
       </div>
-    )
-  }
-  
+
+
+
+    </body>
+  )
+}
