@@ -52,15 +52,11 @@ export default function AppRoutes() {
           <Route path="/perfil" element={<Profile />} />        
           <Route path="/configuracoes" element={<Settings />} />
         </Route>
+        <Route path="/lockscreen" element={<Lockscreen />} />
       </Route>
 
       <Route path="*" element={<NotFound />} />
-      <Route path="/lockscreen" element={<Lockscreen />} />
-
-
-
+      
     </Routes>
-
-
   )
 }
