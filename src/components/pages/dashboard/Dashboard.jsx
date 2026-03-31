@@ -1,5 +1,5 @@
 
-import './Dashboard1.css';
+import './Dashboard.css';
 import { useEffect, useState } from "react";
 import iconCaracol from "./../../../assets/img/COLEGIAL.png";
 
