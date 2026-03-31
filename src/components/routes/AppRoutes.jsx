@@ -49,15 +49,14 @@ export default function AppRoutes() {
           <Route path="/Classe" element={<Classes />} />
           <Route path='/Disciplina' element={<Disciplina />} />
           <Route path='/custo-servico' element={<ServiceCostPage />} />
-          <Route path="/perfil" element={<Profile />} />        
+          <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
         </Route>
-        
       </Route>
 
       <Route path="/lockscreen" element={<Lockscreen />} />
       <Route path="*" element={<NotFound />} />
-      
+
     </Routes>
   )
 }
