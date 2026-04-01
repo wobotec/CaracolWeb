@@ -4,6 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { Input } from '../../Input/input'
 import './login.css'
 
+import splash1 from './../../../assets/img/splash/splash1.png';
+
+
+
+
 export default function Login() {
   const { login, loading, error, isAuthenticated } = useAuth()
   const navigate = useNavigate()
@@ -35,7 +40,8 @@ export default function Login() {
     <div class="card-wrapper">
       <div class="panel-left">
 
-        <a class="create-link">Create an account</a>
+
+        <img className='splash' src={splash1} alt="Splash" />
       </div>
 
 
