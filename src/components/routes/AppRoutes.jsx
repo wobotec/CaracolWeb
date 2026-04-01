@@ -11,6 +11,7 @@ import StudentsAcademico from '../pages/students/StudentsAcademico';
 import StudentConfirm from '../pages/students/StudentConfirm';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
+import SuspensionPage from '../pages/students/SuspensionPage';
 import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
@@ -43,6 +44,7 @@ export default function AppRoutes() {
           <Route path="/alunos/novo" element={<StudentForm />} />
           <Route path="/alunos/dados-pessoal" element={<StudentPage />} />
           <Route path="/alunos/desistente" element={<StudentDropOut />} />
+          <Route path='/alunos/suspensao' element={<SuspensionPage />} />
           <Route path="/alunos/academico" element={<StudentsAcademico/>} />
           <Route path="/escolas/nova" element={<SchoolForm />} />
           <Route path="/escolas" element={<SchoolList />} />
