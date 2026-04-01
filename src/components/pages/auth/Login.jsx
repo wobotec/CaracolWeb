@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
-import { Input } from '../../Input/input'
+import './login.css'
+
+import splash1 from './../../../assets/img/splash/splash1.png';
+import back1 from'./../../../assets/img/back/back2.jpg'
+
+
 
 export default function Login() {
   const { login, loading, error, isAuthenticated } = useAuth()
@@ -29,39 +34,41 @@ export default function Login() {
       [e.target.name]: e.target.value,
     })
   }
-  
-  return (
-    <div className=" d-flex justify-content-center align-items-center min-vh-100 vw-100  bg-light" >
-      <div className=" card shadow p-4" style={{width: "400px", height: "400px"}}>
-      <h3 className="text-center mb-4">
-        Login
-      </h3>
-     <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">
-       <Input
-        label="Email"
-        name="email"
-        value={form.email}
-        onChange={handleChange}
-        placeholder="Digite seu email"
-      />
 
-      <Input
-        label="Senha"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-        placeholder="Digite sua senha"
-      />
+  return (    
+    <div class="card-wrapper">
+      <div class="panel-left">
+        <img className='splash' src={splash1} alt="Splash" />
+      </div>
 
+      <div class="divider-v"></div>
+      
+      <div class="panel-right">
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">
 
-      <button disabled={loading} className="btn btn-primary text-white px-4 py-2 w-100">
-        {loading ? 'Entrando...' : 'Login'}
-      </button>
+          <div class="input-group-custom">
+            <span class="icon"><i class="fa fa-user"></i></span>
+            <input type="text" label="Email" value={form.email}
+              onChange={handleChange} name="email" placeholder="Digite seu email" />
+          </div>
 
-      {error && <p className="text-darnger text-sm">{error}</p>}
-    </form>
+          <div class="input-group-custom">
+            <span class="icon"><i class="fa fa-lock"></i></span>
+            <input label="Senha" name="password" value={form.password} type="password" onChange={handleChange}
+            placeholder="Digite sua senha" />
+          </div>
+
+          <div>
+            <button disabled={loading} class="btn-login btn-primary">{loading ? 'Entrando...' : 'Login'}</button>
+          </div>                
+
+          {error && <p className="text-darnger text-sm">{error}</p>}
+        </form>
+      </div>
     </div>
-  </div>
+
   )
 }
+
+
