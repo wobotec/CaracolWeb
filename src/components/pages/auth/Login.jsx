@@ -1,11 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
-import { Input } from '../../Input/input'
 import './login.css'
 
 import splash1 from './../../../assets/img/splash/splash1.png';
-
+import back1 from'./../../../assets/img/back/back2.jpg'
 
 
 
@@ -36,7 +35,7 @@ export default function Login() {
     })
   }
 
-  return (
+  return (    
     <div class="card-wrapper">
       <div class="panel-left">
         <img className='splash' src={splash1} alt="Splash" />
@@ -68,5 +67,8 @@ export default function Login() {
         </form>
       </div>
     </div>
+
   )
 }
+
+
