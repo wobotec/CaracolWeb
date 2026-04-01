@@ -39,13 +39,11 @@ export default function Login() {
   return (
     <div class="card-wrapper">
       <div class="panel-left">
-
-
         <img className='splash' src={splash1} alt="Splash" />
       </div>
 
-
       <div class="divider-v"></div>
+      
       <div class="panel-right">
         <h2>Login</h2>
         <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">

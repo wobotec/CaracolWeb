@@ -12,7 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./../../../assets/img/back/back1.png');
+  background: url('./../../../assets/img/back/back2.jpg');
   background-repeat: no-repeat;
   background-position: 0;
   background-size: 100%;
@@ -23,7 +23,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  width: 820px;
+  width: 700px;
   max-width: 95vw;
   min-height: 380px;
   display: flex;
