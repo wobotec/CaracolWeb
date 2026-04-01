@@ -1,5 +1,5 @@
-import DashboardGrid from '../../../components/dashboard/DashboardGrid'
 
+import './dashboard.css';
 import { useEffect, useState } from "react";
 import iconCaracol from "./../../../assets/img/COLEGIAL.png";
 import './dashboard.css'
