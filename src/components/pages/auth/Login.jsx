@@ -184,9 +184,7 @@ export default function Login() {
 
             <div>
               <button disabled={loading} className={c("btn btn-login btn-primary")}>{loading ? 'Entrando...' : 'Login'}</button>
-            </div>
-
-            
+            </div>            
               
               {error && <p className="text-darnger text-sm">{error}</p>}
             
