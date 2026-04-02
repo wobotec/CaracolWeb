@@ -9,11 +9,11 @@ import splash4 from './../../../assets/img/splash/splash4.jpg';
 
 import back1 from './../../../assets/img/back/back1.jpg';
 
-const SLIDES = [
-  { tag: "Bem-vindo",   title: "Crie sua conta grátis",      sub: "Acesso rápido e seguro à plataforma." },
-  { tag: "Conecte-se",  title: "Trabalhe de qualquer lugar",  sub: "Sincronize seus dados em todos os dispositivos." },
-  { tag: "Segurança",   title: "Seus dados protegidos",       sub: "Criptografia de ponta a ponta em tudo." },
-  { tag: "Novo",   title: "Meu titulo",       sub: "Criptografia de ponta a ponta em tudo." },
+const SLIDES = [  
+{ tag: "Bem-vindo",         title: "Software de Gestão Escolar",       sub: "Gerencie sua escola de forma simples e completa." },
+{ tag: "Mód. Pedagógico", title: "Ensino na palma da mão",           sub: "Acompanhe turmas, aulas e desempenho dos alunos." },
+{ tag: "Módulo Administrativo", title: "Gestão eficiente do dia a dia", sub: "Controle processos, equipes e relatórios em um só lugar." },
+{ tag: "Módulo Financeiro", title: "Suas finanças sob controle",        sub: "Gerencie mensalidades, cobranças e fluxo de caixa." },
 ];
 
 const IMGS = [
@@ -100,8 +100,7 @@ export default function Login() {
       [e.target.name]: e.target.value,
     })
   }
-
-  //----------------------------Para rever
+  
   const [current, setCurrent] = useState(0);  
 
   useEffect(() => {
