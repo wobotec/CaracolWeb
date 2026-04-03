@@ -6,7 +6,7 @@ import './assets/font-awesome/css/font-awesome.css'
 import './assets/css/animate.css'
 import './assets/css/style.css'
 //Scripts
-import './assets/js/jquery-3.1.1.min.js'
+import './assets/js/jquery-3.7.1.min.js'
 import './assets/js/bootstrap.min.js'
 import './assets/js/plugins/metisMenu/jquery.metisMenu.js'
 import './assets/js/plugins/slimscroll/jquery.slimscroll.min.js'
