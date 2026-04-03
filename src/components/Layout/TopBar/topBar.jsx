@@ -34,9 +34,9 @@ const TopBar = () => {
                       </li>
                       <li className="divider"></li>
                       <li>
-                          <div class="text-center link-block">
+                          <div className="text-center link-block">
                               <a href="mailbox.html">
-                                  <i class="fa fa-envelope"></i> <strong>Ler Todas</strong>
+                                  <i className="fa fa-envelope"></i> <strong>Ler Todas</strong>
                               </a>
                           </div>
                       </li>                        

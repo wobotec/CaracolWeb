@@ -48,9 +48,9 @@ const Sidebar = () => {
             icon: iconstaff,
             name: "Funcionários",
             submenu: [
-                { name: "Administrativos", path: "/professores" },
+                { name: "Administrativos", path: "/administradores" },
                 { name: "Professores", path: "/professores" },
-                { name: "Utilizadores", path: "/professores" },
+                { name: "Usuários", path: "/usuarios" },
             ],
         },
         {
@@ -80,8 +80,8 @@ const Sidebar = () => {
                 { name: "Pagamentos", path: "/Pagamentos" },
                 { name: "Despesas", path: "/Despesas" },
                 { name: "Acumulados", path: "/Acumulados" },
-                { name: "Estatísticas financeira", path: "/Acumulados" },
-                { name: "Banco", path: "/Acumulados" },
+                { name: "Estatísticas financeira", path: "/Estatisticas" },
+                { name: "Banco", path: "/Banco" },
             ]
         },
         {
@@ -89,17 +89,17 @@ const Sidebar = () => {
             submenu: [
                 { name: "Viaturas", path: "/Viaturas" },
                 { name: "Controlo de Rotas", path: "/Despesas" },
-                { name: "Controlo de pessageiros", path: "/Acumulados" },
-                { name: "Pagamentos", path: "/Acumulados" },
-                { name: "Custos", path: "/Acumulados" },
+                { name: "Controlo de pessageiros", path: "/passageiros" },
+                { name: "Pagamentos", path: "/pagamentos" },
+                { name: "Custos", path: "/custos" },
             ]
         },
         {
             icon: iconprint, name: "Impressões",
             submenu: [
-                { name: "Imp. Administrativas", path: "/relatorios" },
-                { name: "Imp. Pedagógicas", path: "/relatorios" },
-                { name: "Imp. Finançeiras", path: "/relatorios" },
+                { name: "Imp. Administrativas", path: "/Imp-admin" },
+                { name: "Imp. Pedagógicas", path: "/Imp-pedagogica" },
+                { name: "Imp. Finançeiras", path: "/Imp-financeiras" },
             ]
         },
         {
