@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { courses, classData } from "./mockClass"
 import CourseFilter from "../../Classes/CourseFilter"
 import ClassTable from "../../Classes/ClassTable"
-import ClassModal from "../../classes/ClassModal"
+import ClassModal from "../../Classes/ClassModal"
 import TurmaModal from '../../Turma/TurmaModal'
 
 export default function Classes() {

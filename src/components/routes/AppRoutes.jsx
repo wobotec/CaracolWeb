@@ -21,6 +21,7 @@ import Register from '../pages/auth/register';
 import Classes from '../pages/classes/Classes';
 import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
+import Expenses from '../pages/expenses/Expenses';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from '../pages/lockscreen/Lockscreen';
@@ -49,6 +50,7 @@ export default function AppRoutes() {
           <Route path="/ano-lectivo" element={<AcademicYearPage />} />
           <Route path="/departamentos" element={<DepartmentsList />} />
           <Route path="/servicos" element={<Services />} />
+          <Route path='/Despesas' element={<Expenses />} />
           <Route path="/Classe" element={<Classes />} />
           <Route path='/Disciplina' element={<Disciplina />} />
           <Route path='/custo-servico' element={<ServiceCostPage />} />
