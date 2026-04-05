@@ -12,7 +12,7 @@ export default function StudentPage() {
         s.name.toLowerCase().includes(search.toLowerCase())
     )
     return (
-        <PageBase title="Dados geral" subtitle="Dos alunos">
+        <PageBase title="Dados Geral" subtitle="Dos alunos">  
             <StudentSearch search={search} setSearch={setSearch} />
             <StudentStats student={filtered} />
             <StudentTable student={filtered} />
