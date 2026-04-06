@@ -7,8 +7,8 @@ const PageBase = (props) => {
                 <div className="col-lg-10">
                     <h2>
                         {props.title}
-                        <p className="line">¯¯¯¯¯ </p>
-                    </h2>
+                        <p className="line">----- <span style={{ color: '#000', fontSize: '50%' }} > {props.subtitle}</span> </p>                        
+                    </h2>                    
                 </div>
             </div>
 
