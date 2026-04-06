@@ -15,7 +15,7 @@ export default function AppLayout() {
 
         <Topbar />          
         
-        <Outlet />               
+        <Outlet />
 
         <Footer />
       </div>

@@ -1,31 +1,27 @@
 import DisciplineFilter from "../../disciplines/DisciplineFilter"
 import DisciplineInfo from "../../disciplines/DisciplineInfo"
 import DisciplineTable from "../../disciplines/DisciplineTable"
+import PageBase from "../../Layout/PageBase/PageBase"
 
-export default function DisciplinesPage(){
+export default function DisciplinesPage() {
 
-return(
+    return (
+        <PageBase   title="Disciplinas">
+        <div className="container mt-4">            
 
-<div className="container mt-4">
+            <DisciplineInfo />
 
-<h3 className="mb-3">Disciplinas</h3>
+            <div className="row">
+                <div className="col-md-4">
+                    <DisciplineFilter />
+                </div>
 
-<DisciplineInfo/>
-
-<div className="row">
-
-<div className="col-md-4">
-<DisciplineFilter/>
-</div>
-
-<div className="col-md-8">
-<DisciplineTable/>
-</div>
-
-</div>
-
-</div>
-
-)
+                <div className="col-md-8">
+                    <DisciplineTable />
+                </div>
+            </div>
+        </div>
+        </PageBase>
+    )
 
 }

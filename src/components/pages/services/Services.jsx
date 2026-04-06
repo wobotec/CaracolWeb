@@ -4,6 +4,7 @@ import { mockServices, mockReferences } from "./mockServices";
 import ServiceTable from "./ServiceTable";
 import ReferenceForm from "./ReferenceForm";
 import ReferenceTable from "./ReferenceTable";
+import PageBase from "../../Layout/PageBase/PageBase";
 
 export default function Services() {
     const [services, setServices] = useState(mockServices);
@@ -32,8 +33,8 @@ export default function Services() {
     };
 
     return (
-        <div className="container mt-4">
-            <h3 className="text-center mb-4">Serviços</h3>
+        <PageBase  title="Serviços">
+        <div className="container mt-4">            
             <div className="row">
                 {/* Serviços */}
                 <div className="col-md-6">
@@ -49,5 +50,6 @@ export default function Services() {
                 </div>
             </div>
         </div>
+        </PageBase>
     )
 }

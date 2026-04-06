@@ -32,10 +32,10 @@ export default function AppRoutes() {
     <Routes>
 
       <Route element={<AuthLayout />}>
-        <Route path="/login" element={<Login />} />
+      <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Route>
-
+      
 
       <Route element={<PrivateRoute />}>
         <Route element={<AppLayout />}>

@@ -3,6 +3,7 @@ import Stepper from '../../ui/Stepper'
 import StudentStap1 from '../../forms/StudentStep1'
 import StudentStap2 from '../../forms/StudentStep2'
 import StudentStap3 from '../../forms/StudentStep3'
+import PageBase from '../../Layout/PageBase/PageBase'
 
 export default function StudentForm() {
   const [step, setStep] = useState(1)
@@ -20,7 +21,10 @@ export default function StudentForm() {
     }
   
     return(
-        <div className="card shadow-sm">
+        <PageBase title="Aluno Novo">
+            <p>Suspenso até o ajuste</p>
+
+        {/* <div className="card shadow-sm">
             <div className="card-body">
                 <Stepper step={step} />
                 {step === 1 && <StudentStap1 data={formData} updateField={updateField} next={next} />}
@@ -28,5 +32,8 @@ export default function StudentForm() {
                 {step === 3 && <StudentStap3 data={formData} updateField={updateField} prev={prev} />}
             </div>
         </div>
+        */}
+
+        </PageBase>
     )
 }

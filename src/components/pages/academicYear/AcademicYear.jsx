@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AcademicYearTable from '../../academicYear/AcademicYearTable';
 import AcademicYearFormModal from '../../academicYear/AcademicYearFormModal';
 import AcademicYearViewModal from '../../academicYear/AcademicYearViewModal';
+import PageBase from '../../Layout/PageBase/PageBase';
 
 export default function AcademicYearPage() {
     const [years, setYears] = useState([
@@ -37,10 +38,10 @@ export default function AcademicYearPage() {
             setYears(prev => prev.filter(year => year.id !== id));
         }
     return (
+        <PageBase   title="Ano Lectivo">
         <div className="card shadow-sm">
             <div className="card-body">
-                <div className="d-flex justify-content-between mb-3">
-                    <h5>Ano Lectivo</h5>
+                <div className="d-flex justify-content-between mb-3">                    
                     <div className='btn-group'>
                         <button className="btn btn-primary me-2" onClick={() => setShowForm(true)}>Novo Ano</button>
                         <button className="btn btn-secondary" >Editar</button>
@@ -56,5 +57,6 @@ export default function AcademicYearPage() {
             )}
             </div>
         </div>
+        </PageBase>
     )
 }
