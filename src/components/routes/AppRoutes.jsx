@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
 import AuthLayout from '../Layout/AuthLayout';
-
 import Login from '../pages/auth/Login';
 import Dashboard from '../pages/dashboard/Dashboard';
 import StudentList from '../pages/students/StudentsList';
@@ -23,6 +22,7 @@ import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
+import AccumulatedValuesPage from "../pages/reports/accumulatedvalues/AccumulatedValuesPage";
 
 
 
