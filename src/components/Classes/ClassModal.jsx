@@ -12,6 +12,7 @@ export default function ClassModal({ show, onClose, onSave, editing}){
             setForm(editing)
         }
     }, [editing])
+
     const handleChange = (e) => {
         setForm({
             ...form,
