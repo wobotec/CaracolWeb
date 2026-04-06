@@ -2,6 +2,7 @@ import { useState } from "react";
 import SearchBar from "./SearchBar";
 import ReportHeader from "./ReportHeader";
 import ValuesTable from "./ValuesTable";
+import PageBase from "../../../Layout/PageBase/PageBase"
 
 export default function AccumulatedValuesPage(){
 
@@ -23,7 +24,7 @@ item.name.toLowerCase().includes(search.toLowerCase())
 )
 
 return(
-
+<PageBase>
 <div className="container mt-4">
 
 <h4 className="border-bottom border-primary pb-2 d-inline-block">
@@ -35,7 +36,7 @@ Valores acumulados
 <ValuesTable data={filtered}/>
 
 </div>
-
+</PageBase>
 )
 
 }
