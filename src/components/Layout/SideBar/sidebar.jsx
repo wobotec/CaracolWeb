@@ -68,7 +68,7 @@ const Sidebar = () => {
             icon: iconorder,
             name: "Pedagógico",
             submenu: [
-                { name: "Lançamento de notas", path: "/Classe" },
+                { name: "Lançamento de notas", path: "/Lancamento-nota" },
                 { name: "Cumprimento de notas", path: "/Curso" },
                 { name: "Notas implantadas", path: "/classe" },
                 { name: "Transição de classe", path: "/Turma" },
