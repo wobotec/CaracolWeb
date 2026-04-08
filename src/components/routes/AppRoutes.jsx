@@ -24,6 +24,7 @@ import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen"
 import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
+import TransferredNotesPage from "../pages/student/transferredNotes/TransferredNotesPage";
 
 
 export default function AppRoutes() {
@@ -54,6 +55,7 @@ export default function AppRoutes() {
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
+          <Route path='/notastransferidas'element={<TransferredNotesPage/>}/>
         </Route>
       </Route>
 

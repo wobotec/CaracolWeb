@@ -82,6 +82,7 @@ const Sidebar = () => {
                 { name: "Acumulados", path: "/Acumulados" },
                 { name: "Estatísticas financeira", path: "/Estatisticas" },
                 { name: "Banco", path: "/Banco" },
+                { name: "Teste", path: "/notastransferidas"}
             ]
         },
         {
