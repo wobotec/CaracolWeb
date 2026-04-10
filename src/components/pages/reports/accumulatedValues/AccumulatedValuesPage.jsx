@@ -24,7 +24,7 @@ item.name.toLowerCase().includes(search.toLowerCase())
 )
 
 return(
-<PageBase>
+<PageBase title="valores acumulados">
 <div className="container mt-4">
 
 <h4 className="border-bottom border-primary pb-2 d-inline-block">
