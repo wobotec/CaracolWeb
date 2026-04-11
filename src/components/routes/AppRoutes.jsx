@@ -22,10 +22,9 @@ import Disciplina from '../pages/disciplina/DisciplinesPage';
 import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
-import Lockscreen from "../pages/lockscreen/Lockscreen"
-import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
-import TransferredNotesPage from "../pages/student/transferredNotes/TransferredNotesPage";
-
+import Lockscreen from "../pages/lockscreen/Lockscreen";
+import AccumulatedValuesPage from "../pages/reports/accumulatedvalues/AccumulatedValuesPage";
+import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";
 
 export default function AppRoutes() {
   return (
@@ -55,7 +54,7 @@ export default function AppRoutes() {
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
-          <Route path='/notastransferidas'element={<TransferredNotesPage/>}/>
+          <Route path='/TransferredNotes'element={<TransferredNotesPage/>}/>
         </Route>
       </Route>
 

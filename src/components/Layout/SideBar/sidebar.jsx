@@ -69,9 +69,10 @@ const Sidebar = () => {
             name: "Pedagógico",
             submenu: [
                 { name: "Lançamento de notas", path: "/Classe" },
-                { name: "Cumprimento de notas", path: "/Curso" },
+                { name: "Cumprimento de notas", path: "/TransferredNotes" },
                 { name: "Notas implantadas", path: "/classe" },
                 { name: "Transição de classe", path: "/Turma" },
+                
             ],
         },
         {
@@ -82,7 +83,7 @@ const Sidebar = () => {
                 { name: "Acumulados", path: "/Acumulados" },
                 { name: "Estatísticas financeira", path: "/Estatisticas" },
                 { name: "Banco", path: "/Banco" },
-                { name: "Teste", path: "/notastransferidas"}
+               
             ]
         },
         {

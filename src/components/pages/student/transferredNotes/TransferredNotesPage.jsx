@@ -1,7 +1,10 @@
 import React from "react";
+import PageBase from "../../../Layout/PageBase/PageBase";
+
 
 const TransferredNotes = () => {
   return (
+     <PageBase title="notas transferidas">
     <div className="container-fluid mt-3">
 
       {/* Título */}
@@ -58,7 +61,7 @@ const TransferredNotes = () => {
             </div>
           </div>
         </div>
-
+        
         {/* ================= CENTER (TABELA) ================= */}
         <div className="col-md-4">
           <div className="card shadow-sm">
@@ -148,7 +151,7 @@ const TransferredNotes = () => {
               <div className="mb-2">
                 <label className="form-label">Disciplina:</label>
                 <select className="form-select">
-                  <option>Est. Meio</option>
+                  <option>Est.Meio</option>
                 </select>
               </div>
 
@@ -164,7 +167,7 @@ const TransferredNotes = () => {
               <div className="text-center">
                 <button
                   className="btn btn-primary rounded-circle"
-                  style={{ width: "60px", height: "60px" }}
+                  style={{ width: "60px", height: "60px" }} 
                 >
                   ✓
                 </button>
@@ -186,6 +189,8 @@ const TransferredNotes = () => {
 
       </div>
     </div>
+    </PageBase>
+
   );
 };
 
