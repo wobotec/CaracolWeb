@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import AppLayout from '../Layout/AppLayout'
 import { PrivateRoute } from './PrivateRoute'
 import AuthLayout from '../Layout/AuthLayout';
-
 import Login from '../pages/auth/Login';
 import Dashboard from '../pages/dashboard/Dashboard';
 import StudentList from '../pages/students/StudentsList';
@@ -25,6 +24,8 @@ import Grades from "../pages/grades/Grades";
 import Banks from "../pages/banks/Banks";
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
+import Lockscreen from "../pages/lockscreen/Lockscreen"
+import AccumulatedValuesPage from '../pages/reports/accumulatedvalues/AccumulatedValuesPage';
 import Lockscreen from '../pages/lockscreen/Lockscreen';
 import Payment from '../pages/payment/Payment';
 
@@ -59,6 +60,7 @@ export default function AppRoutes() {
           <Route path='/Banco' element={<Banks />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
+          <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
         </Route>
       </Route>
