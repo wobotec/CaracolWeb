@@ -68,7 +68,7 @@ const Sidebar = () => {
             icon: iconorder,
             name: "Pedagógico",
             submenu: [
-                { name: "Lançamento de notas", path: "/Classe" },
+                { name: "Lançamento de notas", path: "/lancamento-notas" },
                 { name: "Cumprimento de notas", path: "/Curso" },
                 { name: "Notas implantadas", path: "/classe" },
                 { name: "Transição de classe", path: "/Turma" },
@@ -77,7 +77,7 @@ const Sidebar = () => {
         {
             icon: iconmoney, name: "Finanças",
             submenu: [
-                { name: "Pagamentos", path: "/Pagamentos" },
+                { name: "Pagamentos", path: "/pagamento" },
                 { name: "Despesas", path: "/Despesas" },
                 { name: "Acumulados", path: "/Acumulados" },
                 { name: "Estatísticas financeira", path: "/Estatisticas" },
