@@ -24,6 +24,7 @@ import ServiceCostPage from '../pages/service-cost/ServiceCostPage';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from '../pages/lockscreen/Lockscreen';
+import Payment from '../pages/payment/Payment';
 
 
 
@@ -54,9 +55,11 @@ export default function AppRoutes() {
           <Route path='/custo-servico' element={<ServiceCostPage />} />
           <Route path="/perfil" element={<Profile />} />
           <Route path="/configuracoes" element={<Settings />} />
+          <Route path="/pagamento" element={<Payment />} />
         </Route>
       </Route>
 
+      <Route path="/pagamento" element={<Payment />} />
       <Route path="/lockscreen" element={<Lockscreen />} />
       <Route path="*" element={<NotFound />} />
 
