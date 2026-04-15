@@ -70,7 +70,7 @@ const Sidebar = () => {
             submenu: [
                 { name: "Lançamento de notas", path: "/lancamento-notas" },
                 { name: "Cumprimento de notas", path: "/" },
-                { name: "Notas implantadas", path: "/classe" },
+                { name: "Notas implantadas", path: "/notas-implantadas" },
                 { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
             ],
         },
