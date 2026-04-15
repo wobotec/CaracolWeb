@@ -1,35 +1,44 @@
-export default function DisciplineFilter(){
+export default function DisciplineFilter() {
 
-return(
+    return (
 
-<div className="card p-3">
+        <div className="card p-3">
+            <div>
+                <div style={{ padding: "10px"}}>
+                    <label>Ano lectivo</label><br />
+                    <select className="form-select">
+                        <option>2023/2024</option>
+                    </select>
+                </div>
+                <div style={{ padding: "10px"}}>
+                    <label>Curso</label><br />
+                    <select className="form-select mb-3">
+                        <option>Sem Opção</option>
+                    </select>
+                </div>
+                <div style={{ padding: "10px"}}>
+                    <label>Classe</label><br />
+                    <select className="form-select mb-3">
+                        <option>1ª Classe</option>
+                    </select>
+                </div>
+                <div style={{ padding: "10px"}}>
+                    <label>Turma</label><br />
+                    <select className="form-select mb-3">
+                         <option>1M/A</option>
+                    </select>
+                </div>
+                <div style={{ padding: "10px" }}>
+                    <p>Turma pertecente ao período: Manhã Capacidade máxima de Alunos: 45</p>
+                </div>
+                <div style={{ padding: "10px"}}>
+                    <button className="btn btn-primary " style={{ width: "100%"}}>
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
 
-<h6 className="mb-3">
-Preencha os dados para ver as disciplinas
-</h6>
-
-<label>Ano lectivo</label>
-<select className="form-select mb-3">
-<option>2023/2024</option>
-</select>
-
-<label>Curso</label>
-<select className="form-select mb-3">
-<option>Sem Opção</option>
-</select>
-
-<label>Classe</label>
-<select className="form-select mb-3"></select>
-
-<label>Turma</label>
-<select className="form-select mb-3"></select>
-
-<button className="btn btn-primary w-100">
-Buscar
-</button>
-
-</div>
-
-)
+    )
 
 }
