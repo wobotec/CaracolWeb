@@ -1,4 +1,5 @@
 import React from "react";
+import PageBase from "../../Layout/PageBase/PageBase"
 
 const StudentStatus = () => {
   const students = [
@@ -10,6 +11,7 @@ const StudentStatus = () => {
   ];
 
   return (
+    <PageBase title="Transição de Classe">
     <div className="container-fluid py-4 px-5" style={{ background: "#f4f6fb" }}>
 
       {/* TÍTULO */}
@@ -175,6 +177,7 @@ const StudentStatus = () => {
         </div>
       </div>
     </div>
+    </PageBase>
   );
 };
 
