@@ -72,6 +72,7 @@ const Sidebar = () => {
                 { name: "Cumprimento de notas", path: "/" },
                 { name: "Notas implantadas", path: "/notas-implantadas" },
                 { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
+               
             ],
         },
         {

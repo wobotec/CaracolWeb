@@ -30,6 +30,7 @@ import Lockscreen from "../pages/lockscreen/Lockscreen";
 import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
 import StudentStatus from "../pages/student/StudentStatus";
+import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
 
 export default function AppRoutes() {
   return (
@@ -67,6 +68,7 @@ export default function AppRoutes() {
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
           <Route path="/transicaodeclasse" element={<StudentStatus/>} />
+          <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
         </Route>
       </Route>
 
