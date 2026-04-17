@@ -4,7 +4,7 @@ import PageBase from "../../../Layout/PageBase/PageBase";
 
 const TransferredNotes = () => {
   return (
-     <PageBase title="notas transferidas">
+     <PageBase title="Notas transferidas">
     <div className="container-fluid mt-3">
 
       {/* Título */}
@@ -176,9 +176,13 @@ const TransferredNotes = () => {
             </div>
           </div>
         </div>
-
+         <p> Notas já lançadas:  </p>
         {/* ================= RIGHT FINAL (MENSAGEM) ================= */}
         <div className="col-md-2 d-flex align-items-center">
+          <div className="row">
+          <p className="col-md-6">DISCIPLINAS  </p>       
+            <p className="col-md-6">MF  </p>       
+            </div>                          
           <div className="text-center text-primary fw-bold">
             <p>Ainda não se Atribuiu notas a este aluno.</p>
             <small className="text-muted">
