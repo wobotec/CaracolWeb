@@ -26,9 +26,10 @@ import Banks from "../pages/banks/Banks";
 import GradesEntry from "../pages/grades/GradesEntry";
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
-import Lockscreen from "../pages/lockscreen/Lockscreen"
+import Lockscreen from "../pages/lockscreen/Lockscreen";
 import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
+import StudentStatus from "../pages/student/StudentStatus";
 
 export default function AppRoutes() {
   return (
@@ -65,6 +66,7 @@ export default function AppRoutes() {
           <Route path="/configuracoes" element={<Settings />} />
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
+          <Route path="/transicaodeclasse" element={<StudentStatus/>} />
         </Route>
       </Route>
 

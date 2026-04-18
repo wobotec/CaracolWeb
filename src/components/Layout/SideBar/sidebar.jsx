@@ -69,9 +69,9 @@ const Sidebar = () => {
             name: "Pedagógico",
             submenu: [
                 { name: "Lançamento de notas", path: "/lancamento-notas" },
-                { name: "Cumprimento de notas", path: "/Curso" },
+                { name: "Cumprimento de notas", path: "/" },
                 { name: "Notas implantadas", path: "/notas-implantadas" },
-                { name: "Transição de classe", path: "/Turma" },
+                { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
             ],
         },
         {
