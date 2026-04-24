@@ -69,9 +69,14 @@ const Sidebar = () => {
             name: "Pedagógico",
             submenu: [
                 { name: "Lançamento de notas", path: "/lancamento-notas" },
-                { name: "Cumprimento de notas", path: "/Curso" },
+                { name: "Cumprimento de notas", path: "/TransferredNotes" },
                 { name: "Notas implantadas", path: "/notas-implantadas" },
                 { name: "Transição de classe", path: "/Turma" },
+                
+                { name: "Cumprimento de notas", path: "/" },
+                { name: "Notas implantadas", path: "/notas-implantadas" },
+                { name: "Transiçãodeclasse", path: "/transicaodeclasse" },
+               
             ],
         },
         {
@@ -82,6 +87,7 @@ const Sidebar = () => {
                 { name: "Acumulados", path: "/Acumulados" },
                 { name: "Estatísticas financeira", path: "/Estatisticas" },
                 { name: "Banco", path: "/Banco" },
+               
             ]
         },
         {
@@ -100,6 +106,7 @@ const Sidebar = () => {
                 { name: "Imp. Administrativas", path: "/Imp-admin" },
                 { name: "Imp. Pedagógicas", path: "/Imp-pedagogica" },
                 { name: "Imp. Finançeiras", path: "/Imp-financeiras" },
+                { name: "Imp. Lista nominal de alunos", path: "/Imp-lista-nominal-alunos" },
             ]
         },
         {
