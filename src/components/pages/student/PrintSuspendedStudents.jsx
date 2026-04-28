@@ -1,8 +1,8 @@
 // src/pages/student/PrintSuspendedStudents.jsx
 import React from "react";
-import SuspendedHeader from "../../student/SuspendedHeader";
-import SuspendedTable from "../../student/SuspendedTable";
-import { suspendedStudents } from "../../student/data/suspendedStudents";
+import SuspendedHeader from "../../Student/SuspendedHeader";
+import SuspendedTable from "../../Student/SuspendedTable";
+import { suspendedStudents } from "../../Student/data/suspendedStudents";
 import PageBase from "../../Layout/PageBase/PageBase"
 
 const PrintSuspendedStudents = () => {

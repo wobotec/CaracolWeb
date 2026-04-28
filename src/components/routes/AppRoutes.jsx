@@ -11,6 +11,7 @@ import StudentConfirm from '../pages/students/StudentConfirm';
 import SuspensionPage from '../pages/students/SuspensionPage';
 import StudentPage from '../pages/students/StudentPage';
 import StudentDropOut from '../pages/students/StudentDropOut';
+import Dopouts from '../pages/reports/student/PrintDropoutsStudent';
 import SchoolForm from '../pages/school/SchoolForm';
 import SchoolList from '../pages/school/SchoolList';
 import AcademicYearPage from '../pages/academicYear/AcademicYear';
@@ -29,11 +30,10 @@ import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen";
 import AccumulatedValuesPage from "../pages/reports/accumulatedValues/AccumulatedValuesPage";
-import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";import Payment from '../pages/payment/Payment';
-import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
 import StudentStatus from "../pages/student/StudentStatus";
 import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
+import PrintDropoutsStudent from '../pages/reports/student/PrintDropoutsStudent';
 
 export default function AppRoutes() {
   return (
@@ -73,6 +73,7 @@ export default function AppRoutes() {
           <Route path="/pagamento" element={<Payment />} />
           <Route path="/transicaodeclasse" element={<StudentStatus/>} />
           <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
+          <Route path="/Imp-lista-desistente-alunos" element={<PrintDropoutsStudent/>} />
         </Route>
       </Route>
 
