@@ -28,12 +28,11 @@ import NominalList from '../pages/reports/student/NominalList';
 import Profile from "../pages/user/Profile/Profile";
 import Settings from "../pages/user/Settings/Settings";
 import Lockscreen from "../pages/lockscreen/Lockscreen";
-import AccumulatedValuesPage from "../pages/reports/accumulatedValues/AccumulatedValuesPage";
-import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";import Payment from '../pages/payment/Payment';
+import TransferredNotesPage from "../pages/student/TransferredNotes/TransferredNotesPage";
 import AccumulatedValuesPage from '../pages/reports/accumulatedValues/AccumulatedValuesPage';
 import Payment from '../pages/payment/Payment';
 import StudentStatus from "../pages/student/StudentStatus";
-import PrintSuspendedStudents from "../pages/student/PrintSuspendedStudents";
+import SuspendedStudentsPrint from "../pages/reports/student/SuspendedStudentsPrint";
 
 export default function AppRoutes() {
   return (
@@ -72,7 +71,7 @@ export default function AppRoutes() {
           <Route path='/Acumulados' element={<AccumulatedValuesPage />} />
           <Route path="/pagamento" element={<Payment />} />
           <Route path="/transicaodeclasse" element={<StudentStatus/>} />
-          <Route path="/Imp-pedagogica" element={<PrintSuspendedStudents/>} />
+          <Route path="/Imp-pedagogica" element={<SuspendedStudentsPrint/>} />
         </Route>
       </Route>
 
