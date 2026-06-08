@@ -40,6 +40,8 @@ import EmployeesPrint from '../pages/reports/employee/EmployeesPrint';
 import ClassHistoryReport from '../pages/reports/class/ClassHistoryReport';
 import ServiceCostHistoryPage from "../pages/reports/ServiceCostHistoryPage";
 import TurmasReportPage from "../pages/reports/TurmasReportPage";
+import ResumoAlunosPage from "../pages/reports/ResumoAlunosPage";
+
 
 
 export default function AppRoutes() {
@@ -84,6 +86,7 @@ export default function AppRoutes() {
           <Route path="/Imp-professores" element={<TeachersReport/>} />
           <Route path="/Imp-historico-custos" element={<ServiceCostHistoryPage/>} />
           <Route path="/Imp-historico-de-turmas-criadas" element={<TurmasReportPage/> } />
+          <Route path="/Imp-Resumo-de-sistema-impressão-para-alunos" element={<ResumoAlunosPage/>} />
       
         </Route>
       </Route>
