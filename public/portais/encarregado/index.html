@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script src="../auth-guard.js" data-role="encarregado"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caracol | Portal do Encarregado</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Maria Silva</strong></span>
+                            <span class="text-muted text-xs block">Encarregada de educação <b class="caret"></b></span> </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs"><li><a href="#/documentos">Documentos</a></li><li class="divider"></li><li><a href="#">Sair</a></li></ul>
+                    </div>
+                    <div class="logo-element">CA</div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" onsubmit="return false">
+                        <div class="form-group"><input type="text" placeholder="Pesquisar..." class="form-control" name="top-search" id="top-search"></div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li><select id="st" class="form-control input-sm" style="display:inline-block;width:auto"></select></li>
+                    <li><a href="#/avisos"><i class="fa fa-bell"></i> <span class="label label-primary" id="nb"></span></a></li>
+                    <li><a href="#" data-logout><i class="fa fa-sign-out"></i> Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="app"></div>
+        <div class="footer">
+            <div class="pull-right">Ano letivo <strong>2026</strong></div>
+            <div><strong>Copyright</strong> Caracol &copy; 2026</div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+<script>
+const ST=[{n:'Lucas Silva',t:'7º Ano B',m:'2026-0187'},{n:'Ana Silva',t:'4º Ano A',m:'2026-0342'}];
+let k=0,cur=0;
+const MENU=[['painel','th-large','Painel'],['Acompanhamento','graduation-cap',[['aprendizado','Aprendizado'],['notas','Notas'],['presenca','Presença'],['comportamento','Comportamento'],['progresso','Progresso dos cursos'],['recomendacoes','Recomendações']]],['Agenda e tarefas','calendar',[['calendario','Calendário de aulas'],['projetos','Projetos e tarefas'],['avisos','Avisos']]],['Secretaria','credit-card',[['pagamentos','Pagamentos'],['solicitacoes','Solicitações'],['documentos','Documentos']]],['professores','envelope-o','Professores']];
+const TIT={};MENU.forEach(m=>Array.isArray(m[2])?m[2].forEach(x=>TIT[x[0]]=x[1]):TIT[m[0]]=m[2]);
+const SUB=['Matemática','Português','Ciências','História','Geografia','Inglês','Artes','Ed. Física'],BASE=[8.5,7.2,9,6.8,8,9.4,9.8,9.5];
+const cl=x=>Math.min(10,+x.toFixed(1));
+const G=()=>SUB.map((s,i)=>[s,cl(BASE[i]-.4+k*.3),cl(BASE[i]+(i%2?-.2:.2)),cl(BASE[i]+.3-k*.2),null]);
+const avg=a=>{a=a.filter(x=>x!=null);return a.reduce((p,c)=>p+c,0)/a.length};
+const MEDIA=()=>avg(G().map(g=>avg(g.slice(1,4)))).toFixed(1);
+const lb=(t,c)=>`<span class="label label-${c}">${t}</span>`,col=v=>v>=8?'success':v>=6?'warning':'danger';
+const pg=(v,c='success')=>`<div class="progress progress-small"><div style="width:${v}%" class="progress-bar progress-bar-${c}"></div></div>`;
+const ib=(t,c)=>`<div class="ibox float-e-margins"><div class="ibox-title"><h5>${t}</h5></div><div class="ibox-content">${c}</div></div>`;
+const hd=(t)=>`<div class="row wrapper border-bottom white-bg page-heading"><div class="col-lg-10"><h2>${t}</h2><ol class="breadcrumb"><li><a href="#/painel">Portal</a></li><li class="active"><strong>${ST[k].n} · ${ST[k].t}</strong></li></ol></div></div>`;
+const pw=(t,c)=>(t?hd(t):'')+`<div class="wrapper wrapper-content animated fadeInRight">${c}</div>`;
+const wd=(i,c,v,l)=>`<div class="col-lg-3 col-sm-6"><div class="widget style1 ${c}"><div class="row"><div class="col-xs-4"><i class="fa fa-${i} fa-4x"></i></div><div class="col-xs-8 text-right"><span>${l}</span><h2 class="font-bold">${v}</h2></div></div></div></div>`;
+const fe=(ic,c,t,s,r='')=>`<div class="feed-element"><span class="pull-left btn btn-${c} btn-circle m-r-sm"><i class="fa fa-${ic}"></i></span><div class="media-body"><div class="pull-right">${r}</div><strong>${t}</strong><br><small class="text-muted">${s}</small></div></div>`;
+const toast=m=>alert(m);
+const AV=[['Reunião de pais e encarregados — 24/11','Confirme presença até sexta.','info',1],['Feira de Ciências em 17/11','Alunos devem trazer o projeto até às 8h.','primary',1],['Feriado de 20/11 — sem aulas','Consciência Negra. Retorno dia 23.','warning',0],['Atualização do uniforme','Camiseta nova disponível na secretaria.','info',0]];
+const PAY=[['Setembro',420,1],['Outubro',420,1],['Novembro',420,0],['Dezembro',420,0]];
+const REQ=[['Elogio','Parabéns pela feira de leitura','Respondido'],['Declaração','Declaração de matrícula','Concluído']];
+const CH=[['Prof.ª Marta','Matemática'],['Prof. Carlos','Português'],['Prof.ª Júlia','Ciências'],['Coordenação','Pedagógica']];
+const MSG=[[['th','Olá! O desempenho em álgebra melhorou bastante.']],[['th','Bom dia! Enviei a lista de leitura do bimestre.']],[],[]];
+const T=[['A fazer','Maquete do sistema solar','Ciências','14/11','warning'],['A fazer','Resenha do livro','Português','18/11','info'],['Em andamento','Projeto Feira de Ciências','Ciências','17/11','info'],['Em andamento','Lista de exercícios 8','Matemática','12/11','warning'],['Entregue','Mapa do Brasil','Geografia','05/11','success'],['Entregue','Redação','Português','02/11','success']];
+const V={
+painel:()=>pw('Painel',`<div class="row">${wd('star','navy-bg',MEDIA(),'Média geral')}${wd('check-square-o','lazur-bg',(96-k*2)+'%','Frequência')}${wd('tasks','yellow-bg',T.filter(t=>t[0]!='Entregue').length,'Tarefas pendentes')}${wd('credit-card','red-bg','Vence hoje','Mensalidade novembro')}</div>
+<div class="row"><div class="col-lg-7">${ib('Notas por disciplina (2º bimestre)',`<table class="table">${G().map(g=>`<tr><td style="width:110px">${g[0]}</td><td>${pg(g[2]*10,col(g[2]))}</td><td class="text-right"><b>${g[2]}</b></td></tr>`).join('')}</table>`)}</div>
+<div class="col-lg-5">${ib('Avisos recentes',AV.slice(0,3).map(a=>fe('bullhorn',a[2],a[0],a[1])).join(''))}${ib('Próximas datas',fe('pencil','warning','Prova de Matemática','12/11')+fe('flask','primary','Feira de Ciências','17/11')+fe('users','info','Reunião de pais','24/11'))}</div></div>`),
+aprendizado:()=>pw('Controle de aprendizado',`<div class="row">${SUB.slice(0,6).map((s,i)=>{const v=Math.min(100,Math.round(BASE[i]*10+k*3));return`<div class="col-md-4">${ib(s,pg(v,col(v/10))+`<div class="m-t-sm">${lb(v>=80?'Dominado':v>=65?'Em desenvolvimento':'Atenção',col(v/10))}<span class="pull-right text-muted">${v}%</span></div><small class="text-muted">Leitura · Resolução · Participação</small>`)}</div>`}).join('')}</div>`),
+notas:()=>pw('Controle de notas',ib('Boletim 2026',`<div class="table-responsive"><table class="table table-striped"><thead><tr><th>Disciplina</th><th>1º Bim</th><th>2º Bim</th><th>3º Bim</th><th>4º Bim</th><th>Média</th></tr></thead><tbody>${G().map(g=>`<tr><td><strong>${g[0]}</strong></td>${g.slice(1).map(x=>`<td>${x==null?'—':lb(x,col(x))}</td>`).join('')}<td><strong>${avg(g.slice(1,4)).toFixed(1)}</strong></td></tr>`).join('')}</tbody></table></div>`)),
+presenca:()=>{let c='<tr>'+['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].map(d=>`<th class="text-center">${d}</th>`).join('')+'</tr><tr>',f=0,a=0,o=new Date(2026,10,1).getDay();c+='<td></td>'.repeat(o);for(let d=1;d<=30;d++){const w=new Date(2026,10,d).getDay(),x=w==0||w==6?'':(d+k)%11==4?'F':(d+k)%13==6?'A':'P';x=='F'&&f++;x=='A'&&a++;c+=`<td class="text-center ${x=='P'?'bg-success':x=='F'?'bg-danger':x=='A'?'bg-warning':''}"><strong>${d}</strong><br><small>${x}</small></td>`;if((d+o)%7==0)c+='</tr><tr>'}return pw('Controle de presença',`<div class="row">${wd('check','navy-bg',(96-k*2)+'%','Frequência anual')}${wd('times','red-bg',f,'Faltas no mês')}${wd('clock-o','yellow-bg',a,'Atrasos no mês')}${wd('file-text-o','lazur-bg',1,'Justificativas')}</div>`+ib('Novembro 2026 (P presente · F falta · A atraso)',`<table class="table table-bordered">${c}</tr></table>`))},
+comportamento:()=>pw('Controle de comportamento',`<div class="row"><div class="col-md-4">${ib('Conduta geral',`<h1 class="text-center text-navy">${k?'Excelente':'Muito bom'}</h1><p class="text-center text-muted">Pontuação ${k?96:88}/100</p>${pg(k?96:88)}`)}</div><div class="col-md-8">${ib('Histórico',fe('thumbs-up','primary','Ajudou colega com dificuldade','Elogio · 06/11 · Prof.ª Marta')+fe('hand-paper-o','warning','Conversa durante a aula','Advertência verbal · 28/10 · Prof. Carlos')+fe('trophy','primary','Destaque em trabalho em grupo','Elogio · 15/10 · Prof.ª Júlia'))}</div></div>`),
+calendario:()=>{const ev={5:['Entrega Mapa','info'],12:['Prova Mat.','warning'],17:['Feira Ciências','primary'],20:['Feriado','danger'],24:['Reunião pais','info'],27:['Prova Port.','warning']},o=new Date(2026,10,1).getDay();let c='<tr>'+['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'].map(d=>`<th class="text-center">${d}</th>`).join('')+'</tr><tr>'+'<td></td>'.repeat(o);for(let d=1;d<=30;d++){c+=`<td style="height:70px;width:14%;${d==10?'background:#eefaf7':''}"><strong>${d}</strong>${ev[d]?`<br>${lb(ev[d][0],ev[d][1])}`:''}</td>`;if((d+o)%7==0)c+='</tr><tr>'}return pw('Calendário de aulas',`<div class="row"><div class="col-lg-8">${ib('Novembro 2026',`<table class="table table-bordered">${c}</tr></table>`)}</div><div class="col-lg-4">${ib('Horário de hoje',[['07:30','Matemática'],['08:20','Português'],['09:30','Ciências'],['10:20','Inglês'],['11:10','Ed. Física']].map(a=>fe('clock-o','info',a[1],a[0])).join(''))}</div></div>`)},
+progresso:()=>pw('Progresso dos cursos',`<div class="row">${[['Matemática',72],['Português',65],['Inglês Avançado',58],['Robótica (extra)',40],['Xadrez (extra)',85],['Ciências',70]].map(c=>{const v=Math.min(100,c[1]+k*4);return`<div class="col-md-4">${ib(c[0],`<h2 class="no-margins">${v}%</h2>${pg(v)}<small class="text-muted">Módulos concluídos</small>`)}</div>`}).join('')}</div>`),
+recomendacoes:()=>pw('Recomendações',`<div class="row">${[['book','Leitura','Livro sugerido: “O Pequeno Príncipe” para reforçar interpretação.','primary'],['calculator','Reforço','2 aulas de reforço em frações — quartas, 14h.','warning'],['flask','Atividade','Clube de ciências: vagas abertas para o 2º semestre.','info'],['moon-o','Rotina','Manter 9h de sono melhora o rendimento nas provas.','primary']].map(r=>`<div class="col-md-6">${ib(r[1],fe(r[0],r[3],r[1],r[2]))}</div>`).join('')}</div>`),
+avisos:()=>pw('Controle de avisos',ib('Comunicados',AV.map((a,i)=>fe('bullhorn',a[2],a[0]+(a[3]?' '+lb('novo','info'):''),a[1],a[3]?`<button class="btn btn-xs btn-primary" onclick="AV[${i}][3]=0;r()">Marcar como lido</button>`:'')).join(''))),
+projetos:()=>pw('Status dos projetos e tarefas',`<div class="row">${['A fazer','Em andamento','Entregue'].map(s=>`<div class="col-md-4">${ib(s,`<ul class="agile-list">${T.filter(t=>t[0]==s).map(t=>`<li class="${t[4]}-element"><strong>${t[1]}</strong><div class="agile-detail"><span class="pull-right">${lb(t[2],'default')}</span><i class="fa fa-clock-o"></i> ${t[3]}</div></li>`).join('')}</ul>`)}</div>`).join('')}</div>`),
+pagamentos:()=>pw('Gestão e controle dos pagamentos',`<div class="row">${wd('check-circle','navy-bg','R$ '+PAY.filter(p=>p[2]).length*420,'Pago')}${wd('hourglass-half','yellow-bg','R$ '+PAY.filter(p=>!p[2]).length*420,'Em aberto')}</div>`+ib('Mensalidades 2026',`<table class="table table-hover"><thead><tr><th>Mês</th><th>Valor</th><th>Status</th><th></th></tr></thead><tbody>${PAY.map((p,i)=>`<tr><td><strong>${p[0]}</strong></td><td>R$ ${p[1]},00</td><td>${lb(p[2]?'Pago':'Em aberto',p[2]?'primary':'warning')}</td><td class="text-right">${p[2]?'<a class="btn btn-xs btn-white" onclick="toast(\'Recibo baixado\')"><i class="fa fa-download"></i> Recibo</a>':`<button class="btn btn-xs btn-primary" onclick="PAY[${i}][2]=1;r()">Pagar</button>`}</td></tr>`).join('')}</tbody></table>`)),
+solicitacoes:()=>pw('Solicitações e reclamações',`<div class="row"><div class="col-md-5">${ib('Nova solicitação',`<select id="rt" class="form-control m-b"><option>Solicitação</option><option>Reclamação</option><option>Sugestão</option><option>Elogio</option></select><input id="rs" class="form-control m-b" placeholder="Assunto"><textarea id="rm" rows="4" class="form-control m-b" placeholder="Descreva..."></textarea><button class="btn btn-primary btn-block" onclick="if(!rs.value)return toast('Informe o assunto');REQ.unshift([rt.value,rs.value,'Em análise']);r()">Enviar</button>`)}</div><div class="col-md-7">${ib('Meus protocolos',REQ.map(q=>fe('ticket','info',q[1],q[0],lb(q[2],q[2]=='Em análise'?'warning':'primary'))).join(''))}</div></div>`),
+professores:()=>pw('Comunicação aberta com os professores',`<div class="row"><div class="col-md-4">${ib('Contatos',`<div class="list-group">${CH.map((c,i)=>`<a href="#/professores" class="list-group-item ${i==cur?'active':''}" onclick="cur=${i}"><strong>${c[0]}</strong><br><small>${c[1]}</small></a>`).join('')}</div>`)}</div><div class="col-md-8">${ib(CH[cur][0],`<div class="chat-activity-list" id="ch" style="height:320px;overflow:auto">${MSG[cur].map(m=>`<div class="chat-element ${m[0]=='me'?'right':''}"><a class="pull-${m[0]=='me'?'right':'left'}"><img alt="" class="img-circle" src="img/profile_small.jpg"></a><div class="media-body ${m[0]=='me'?'text-right':''}"><strong>${m[0]=='me'?'Você':CH[cur][0]}</strong><p class="m-b-xs">${m[1]}</p></div></div>`).join('')||'<p class="text-muted text-center">Inicie a conversa</p>'}</div><div class="input-group m-t"><input id="mi" class="form-control" placeholder="Escreva uma mensagem..." onkeydown="if(event.key==\'Enter\')snd()"><span class="input-group-btn"><button class="btn btn-primary" onclick="snd()"><i class="fa fa-paper-plane"></i></button></span></div>`)}</div></div>`),
+documentos:()=>pw('Documentos e autorizações',`<div class="row"><div class="col-md-6">${ib('Documentos',['Boletim 2º bimestre','Declaração de matrícula','Histórico escolar','Contrato de serviços'].map(d=>fe('file-pdf-o','danger',d,'PDF',`<a class="btn btn-xs btn-white" onclick="toast('Download iniciado')"><i class="fa fa-download"></i></a>`)).join(''))}</div><div class="col-md-6">${ib('Autorizações',['Passeio ao museu — 03/12','Uso de imagem','Saída com terceiros'].map(d=>fe('check','primary',d,'Autorizado',`<input type="checkbox" checked>`)).join(''))}</div></div>`)};
+function snd(){const v=mi.value.trim();if(!v)return;const c=cur;MSG[c].push(['me',v]);if(c<2)setTimeout(()=>{MSG[c].push(['th','Obrigada pelo contato! Respondo em breve.']);r()},900);r()}
+function r(){const id=location.hash.replace('#/','')||'painel';$('#app').html((V[id]||V.painel)());$('#side-menu li.m,#side-menu li.g').removeClass('active');const li=$(`#side-menu li.m[data-id=${id}]`).addClass('active'),g=li.closest('li.g');g.addClass('active').children('ul').addClass('in');const n=AV.filter(a=>a[3]).length;$('#nb').text(n||'');const c=document.getElementById('ch');c&&(c.scrollTop=1e5)}
+$('#side-menu').append(MENU.map(m=>Array.isArray(m[2])?`<li class="g"><a href="#" title="${m[0]}"><i class="fa fa-${m[1]}"></i> <span class="nav-label">${m[0]}</span><span class="fa arrow"></span></a><ul class="nav nav-second-level collapse">${m[2].map(x=>`<li class="m" data-id="${x[0]}"><a href="#/${x[0]}">${x[1]}</a></li>`).join('')}</ul></li>`:`<li class="m" data-id="${m[0]}"><a href="#/${m[0]}" title="${m[2]}"><i class="fa fa-${m[1]}"></i> <span class="nav-label">${m[2]}</span></a></li>`).join(''));
+$('#st').html(ST.map((s,i)=>`<option value="${i}">${s.n}</option>`)).on('change',e=>{k=+e.target.value;r()});
+window.onhashchange=r;r();
+</script>
+</body>
+</html>

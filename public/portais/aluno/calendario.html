@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="../auth-guard.js" data-role="aluno"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Aulas | Portal do Aluno - Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+</head>
+<body class="fixed-sidebar ">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Rafael Andrade Souza</strong>
+                            </span>
+                            <span class="text-muted text-xs block">Análise e Desenvolvimento de Sistemas <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="pagamentos.html">Financeiro</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-logout>Sair</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CRC
+                </div>
+            </li>
+            <li>
+                <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel</span></a>
+            </li>
+            <li class="nav-section-title"><span>ACADÊMICO</span></li>
+            <li>
+                <a href="aprendizado.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Meu Aprendizado</span></a>
+            </li>
+            <li>
+                <a href="notas.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Notas</span></a>
+            </li>
+            <li>
+                <a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a>
+            </li>
+            <li>
+                <a href="comportamento.html"><i class="fa fa-shield"></i> <span class="nav-label">Comportamento</span></a>
+            </li>
+            <li class="active">
+                <a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário de Aulas</span></a>
+            </li>
+            <li>
+                <a href="progresso.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Progresso dos Cursos</span></a>
+            </li>
+            <li>
+                <a href="aulas-online.html"><i class="fa fa-play-circle"></i> <span class="nav-label">Aulas Online</span></a>
+            </li>
+            <li class="nav-section-title"><span>CARREIRA</span></li>
+            <li>
+                <a href="colaboracao.html"><i class="fa fa-users"></i> <span class="nav-label">Colaboração em Projetos</span></a>
+            </li>
+            <li>
+                <a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Projetos e Tarefas</span></a>
+            </li>
+            <li>
+                <a href="empregos.html"><i class="fa fa-briefcase"></i> <span class="nav-label">Empregos e Estágios</span></a>
+            </li>
+            <li>
+                <a href="recomendacoes.html"><i class="fa fa-thumbs-o-up"></i> <span class="nav-label">Recomendações</span></a>
+            </li>
+            <li class="nav-section-title"><span>COMUNICAÇÃO</span></li>
+            <li>
+                <a href="avisos.html"><i class="fa fa-bullhorn"></i> <span class="nav-label">Avisos</span></a>
+            </li>
+            <li>
+                <a href="mensagens.html"><i class="fa fa-comments"></i> <span class="nav-label">Fale com Professores</span></a>
+            </li>
+            <li>
+                <a href="solicitacoes.html"><i class="fa fa-life-ring"></i> <span class="nav-label">Solicitações e Reclamações</span></a>
+            </li>
+            <li class="nav-section-title"><span>CONTA</span></li>
+            <li>
+                <a href="pagamentos.html"><i class="fa fa-credit-card"></i> <span class="nav-label">Financeiro</span></a>
+            </li>
+            <li>
+                <a href="perfil.html"><i class="fa fa-user-circle-o"></i> <span class="nav-label">Meu Perfil</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Buscar disciplinas, avisos, colegas..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="avisos.html" title="Avisos">
+                            <i class="fa fa-bullhorn"></i> <span class="label label-danger">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mensagens.html" title="Mensagens">
+                            <i class="fa fa-envelope"></i> <span class="label label-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perfil.html">
+                            <i class="fa fa-user"></i> Rafael
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-logout>
+                            <i class="fa fa-sign-out"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>Calendário de Aulas</h2>
+                <ol class="breadcrumb">
+                    <li><a href="dashboard.html">Portal do Aluno</a></li>
+                    <li class="active"><strong>Calendário de Aulas</strong></li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-right small text-muted" style="margin-top:22px">
+                    Matrícula <strong>2024104532</strong> &middot; Turma <strong>ADS-2024/2N</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            
+<div class="row">
+    <div class="col-lg-8">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5><i class="fa fa-calendar ibox-icon"></i>Julho 2026</h5>
+                <div class="ibox-tools">
+                    <a class="btn btn-xs btn-outline btn-primary"><i class="fa fa-chevron-left"></i></a>
+                    <a class="btn btn-xs btn-outline btn-primary"><i class="fa fa-chevron-right"></i></a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <table class="table table-bordered cal-table text-center">
+                    <thead><tr><th>Dom</th><th>Seg</th><th>Ter</th><th>Qua</th><th>Qui</th><th>Sex</th><th>Sáb</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="cal-empty"></td><td class="cal-empty"></td><td class="cal-empty"></td>
+                            <td><div class="cal-num">1</div></td>
+                            <td><div class="cal-num">2</div><div class="cal-chip cal-blue">Eng. Software</div></td>
+                            <td><div class="cal-num">3</div></td>
+                            <td class="cal-empty"></td>
+                        </tr>
+                        <tr>
+                            <td class="cal-empty"></td>
+                            <td><div class="cal-num">6</div><div class="cal-chip cal-blue">Banco de Dados</div></td>
+                            <td><div class="cal-num">7</div><div class="cal-chip cal-green">Estrut. de Dados</div></td>
+                            <td><div class="cal-num">8</div><div class="cal-chip cal-blue">Eng. Software</div><div class="cal-chip cal-orange">Redes</div></td>
+                            <td><div class="cal-num cal-today">9</div><div class="cal-chip cal-blue">Banco de Dados</div><div class="cal-chip cal-green">Estrut. de Dados</div></td>
+                            <td><div class="cal-num">10</div><div class="cal-chip cal-blue">Eng. Software</div></td>
+                            <td class="cal-empty"></td>
+                        </tr>
+                        <tr>
+                            <td class="cal-empty"></td>
+                            <td><div class="cal-num">13</div><div class="cal-chip cal-blue">Banco de Dados</div></td>
+                            <td><div class="cal-num">14</div><div class="cal-chip cal-green">Estrut. de Dados</div><div class="cal-chip cal-red">Entrega TP2</div></td>
+                            <td><div class="cal-num">15</div><div class="cal-chip cal-blue">Eng. Software</div><div class="cal-chip cal-orange">Redes</div></td>
+                            <td><div class="cal-num">16</div><div class="cal-chip cal-blue">Banco de Dados</div></td>
+                            <td><div class="cal-num">17</div><div class="cal-chip cal-blue">Eng. Software</div></td>
+                            <td class="cal-empty"></td>
+                        </tr>
+                        <tr>
+                            <td class="cal-empty"></td>
+                            <td><div class="cal-num">20</div></td>
+                            <td><div class="cal-num">21</div><div class="cal-chip cal-purple">Prova B2 &mdash; ED II</div></td>
+                            <td><div class="cal-num">22</div><div class="cal-chip cal-orange">Redes</div></td>
+                            <td><div class="cal-num">23</div></td>
+                            <td><div class="cal-num">24</div></td>
+                            <td class="cal-empty"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-clock-o ibox-icon"></i>Hoje &mdash; 09 de julho</h5></div>
+            <div class="ibox-content">
+                <table class="table table-condensed m-b-none">
+                    <tbody>
+                        <tr><td><strong>08:00&ndash;09:40</strong></td><td>Banco de Dados II<br><span class="text-muted small">Sala 12 &middot; Prof.ª Camila Ribeiro</span></td></tr>
+                        <tr><td><strong>10:00&ndash;11:40</strong></td><td>Estrutura de Dados II<br><span class="text-muted small">Sala 07 &middot; Prof. Marcos Vinícius</span></td></tr>
+                        <tr><td><strong>19:00&ndash;20:40</strong></td><td>Redes de Computadores<br><span class="text-muted small">Lab 03 &middot; Prof.ª Fernanda Dias</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-flag ibox-icon"></i>Próximos eventos</h5></div>
+            <div class="ibox-content">
+                <p class="small"><span class="label label-danger">14/07</span> Entrega do Trabalho Prático 2 &mdash; Eng. Software</p>
+                <p class="small"><span class="label label-info" style="background:#7266ba">21/07</span> Prova B2 &mdash; Estrutura de Dados II</p>
+                <p class="small"><span class="label label-warning">28/07</span> Início da recuperação &mdash; Prog. Web II</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.cal-table td{ vertical-align:top; height:88px; width:14.28%; padding:6px; }
+.cal-num{ font-weight:600; margin-bottom:4px; }
+.cal-today{ display:inline-block; background:#007af0; color:#fff; border-radius:50%; width:22px;height:22px;line-height:22px; }
+.cal-chip{ font-size:10px; border-radius:2px; padding:2px 4px; margin-bottom:2px; color:#fff; text-align:left; }
+.cal-blue{ background:#007af0; } .cal-green{ background:#1ab394; } .cal-orange{ background:#f8ac59; }
+.cal-red{ background:#ed5565; } .cal-purple{ background:#7266ba; }
+</style>
+
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Portal do Aluno &mdash; Sistema Caracol
+            </div>
+            <div>
+                <strong>&copy; 2026 Caracol Educacional.</strong> Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+/* =========================================================
+   Portal do Aluno - Caracol
+   Customizações de marca sobre o tema base
+   Cor institucional: #007af0
+   ========================================================= */
+
+:root{
+  --brand: #007af0;
+  --brand-dark: #0269cc;
+}
+
+/* ---------- Sidebar sólida na cor institucional ---------- */
+.navbar-static-side{
+  background-color: #007af0;
+}
+.nav-header{
+  background-color: #007af0;
+  background-image: none;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.nav-header .text-muted{
+  color: rgba(255,255,255,.75) !important;
+}
+ul.nav-second-level{
+  background: #0269cc;
+}
+.nav > li.active{
+  background: #0269cc;
+  border-left: 4px solid #ffffff;
+}
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus{
+  background-color: #0269cc;
+  color:#fff;
+}
+.logo-element{
+  background-color:#0269cc;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.sidebar-search{
+  background:#0269cc;
+}
+#side-menu .nav-label{ font-weight:500; }
+#side-menu > li > a{ border-left:4px solid transparent; }
+.nav-section-title{
+  padding:16px 25px 6px;
+  font-size:10.5px;
+  letter-spacing:1.2px;
+  color:rgba(255,255,255,.55);
+  text-transform:uppercase;
+  font-weight:700;
+}
+body.mini-navbar .nav-section-title{ display:none; }
+body.fixed-sidebar.mini-navbar .navbar-static-side,
+body.body-small.fixed-sidebar.mini-navbar .navbar-static-side{
+  width:70px;
+  overflow:hidden;
+}
+body.fixed-sidebar.mini-navbar #page-wrapper,
+body.body-small.fixed-sidebar.mini-navbar #page-wrapper{
+  margin-left:70px;
+}
+body.fixed-sidebar.mini-navbar .nav-header{
+  padding:0;
+}
+body.fixed-sidebar.mini-navbar .nav-header .profile-element{
+  display:none !important;
+}
+body.fixed-sidebar.mini-navbar .logo-element{
+  display:block;
+}
+body.fixed-sidebar.mini-navbar #side-menu > li > a{
+  padding:14px 0;
+  text-align:center;
+}
+body.fixed-sidebar.mini-navbar #side-menu > li > a .nav-label,
+body.fixed-sidebar.mini-navbar #side-menu > li > a span{
+  display:none;
+}
+body.fixed-sidebar.mini-navbar #side-menu > li > a i{
+  margin-right:0;
+}
+
+/* Scrollbar da sidebar mais discreta */
+.sidebar-collapse{ background-color:#007af0; }
+
+/* ---------- Cabeçalho fixo / marca no topbar ---------- */
+.navbar-top-links .m-r-sm{ color:#007af0; }
+
+/* ---------- Botões / links / destaques na cor institucional ---------- */
+.btn-primary,
+.btn-primary.focus,
+.btn-primary:focus{
+  background-color:#007af0;
+  border-color:#007af0;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active{
+  background-color:#0269cc !important;
+  border-color:#0269cc !important;
+}
+a{ color:#007af0; }
+a:hover, a:focus{ color:#0269cc; }
+.text-brand{ color:#007af0 !important; }
+.bg-brand{ background-color:#007af0 !important; color:#fff; }
+.border-brand{ border-color:#007af0 !important; }
+
+.progress-bar{ background-color:#007af0; }
+.label-brand, .badge-brand{ background-color:#007af0; color:#fff; }
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus{
+  border-top:2px solid #007af0;
+}
+
+/* ---------- Cards / widgets do portal ---------- */
+.stat-card{
+  background:#fff;
+  border-radius:2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  padding:20px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border-left:3px solid #007af0;
+}
+.stat-card .stat-icon{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,122,240,.1);
+  color:#007af0;
+  font-size:22px;
+  flex:0 0 auto;
+}
+.stat-card .stat-value{ font-size:24px; font-weight:700; color:#2f2f2f; line-height:1.1; }
+.stat-card .stat-label{ font-size:12px; color:#8a94a6; text-transform:uppercase; letter-spacing:.4px; }
+
+.ibox-title .ibox-icon{
+  color:#007af0; margin-right:8px;
+}
+
+.timeline-item{
+  position:relative;
+  padding:0 0 22px 34px;
+  border-left:2px solid #e7eaec;
+}
+.timeline-item:last-child{ border-left:2px solid transparent; padding-bottom:0; }
+.timeline-item:before{
+  content:"";
+  position:absolute; left:-7px; top:2px;
+  width:12px;height:12px;border-radius:50%;
+  background:#007af0; border:2px solid #fff; box-shadow:0 0 0 2px #007af0;
+}
+.timeline-item .timeline-date{ font-size:11px; color:#9a9a9a; text-transform:uppercase; }
+
+.kanban-col{ background:#eef1f5; border-radius:3px; padding:12px; min-height:400px; }
+.kanban-col h4{ font-size:13px; text-transform:uppercase; letter-spacing:.5px; color:#6b7784; }
+.kanban-card{
+  background:#fff; border-radius:3px; padding:12px 14px; margin-bottom:10px;
+  box-shadow:0 1px 2px rgba(0,0,0,.08); border-top:3px solid #007af0;
+}
+.kanban-card.card-warning{ border-top-color:#f8ac59; }
+.kanban-card.card-success{ border-top-color:#1c84c6; }
+.kanban-card.card-done{ border-top-color:#1ab394; }
+
+.job-card, .rec-card{
+  background:#fff;border-radius:3px;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.08);
+  height:100%; border-top:3px solid #007af0;
+}
+.job-card .job-company{ font-size:12px; color:#8a94a6; }
+.job-card .job-tags span{ margin:2px 4px 2px 0; }
+
+.avatar-circle{
+  width:40px;height:40px;border-radius:50%;
+  background:#007af0;color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:600;font-size:14px; flex:0 0 auto;
+}
+
+.chat-message{ display:flex; gap:12px; margin-bottom:18px; }
+.chat-bubble{ background:#f3f6f9; border-radius:6px; padding:10px 14px; max-width:75%; }
+.chat-message.me{ flex-direction:row-reverse; }
+.chat-message.me .chat-bubble{ background:#007af0; color:#fff; }
+.chat-meta{ font-size:11px; color:#9a9a9a; margin-top:3px; }
+
+.invoice-status-pago{ color:#1ab394; font-weight:600; }
+.invoice-status-pendente{ color:#f8ac59; font-weight:600; }
+.invoice-status-atrasado{ color:#ed5565; font-weight:600; }
+
+.login-wrapper{
+  min-height:100vh; display:flex; align-items:stretch;
+}
+.login-aside{
+  background: linear-gradient(160deg,#007af0 0%, #0257b8 100%);
+  color:#fff; flex:1; display:flex; flex-direction:column; justify-content:center; padding:60px;
+}
+.login-form-side{ flex:0 0 460px; display:flex; align-items:center; justify-content:center; background:#fff; }
+
+.grade-badge{
+  display:inline-block; min-width:38px; text-align:center; padding:3px 8px; border-radius:3px;
+  font-weight:700; color:#fff;
+}
+.grade-otimo{ background:#1ab394; }
+.grade-bom{ background:#007af0; }
+.grade-atencao{ background:#f8ac59; }
+.grade-critico{ background:#ed5565; }
+
+.attendance-dot{
+  width:26px;height:26px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;
+  font-size:10px;color:#fff;margin:2px;
+}
+.att-p{ background:#1ab394; }
+.att-f{ background:#ed5565; }
+.att-j{ background:#f8ac59; }
+.att-n{ background:#e7eaec; color:#9a9a9a; }
+
+@media (max-width: 768px){
+  .login-aside{ display:none; }
+  .login-form-side{ flex:1; }
+}

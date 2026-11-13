@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script src="../auth-guard.js" data-role="professor"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | Portal do Professor — Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="mini-navbar">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="logo-element">C</div>
+                    <div class="profile-element">
+                        <div class="brand-box">
+                            <div class="brand-mark">C</div>
+                            <div class="brand-text">
+                                <div class="brand-name">Caracol</div>
+                                <div class="brand-sub">Portal do Professor</div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle prof-toggle" href="#">
+                                <span data-prof-nome>Professor</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="perfil.html">Meu perfil</a></li>
+                                <li><a href="#" data-reset-demo>Repor dados de demonstração</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" data-logout>Terminar sessão</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel Principal</span></a></li>
+
+                <li class="nav-label-group">Turmas &amp; Estudantes</li>
+                <li><a href="turmas.html"><i class="fa fa-users"></i> <span class="nav-label">Minhas Turmas</span></a></li>
+                <li><a href="estudantes.html"><i class="fa fa-user"></i> <span class="nav-label">Estudantes</span></a></li>
+
+                <li class="nav-label-group">Pedagógico</li>
+                <li><a href="notas.html"><i class="fa fa-list-alt"></i> <span class="nav-label">Notas</span></a></li>
+                <li><a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a></li>
+                <li><a href="comportamento.html"><i class="fa fa-smile-o"></i> <span class="nav-label">Comportamento</span></a></li>
+                <li><a href="avaliacao-continua.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliação Contínua</span></a></li>
+
+                <li class="nav-label-group">Tarefas &amp; Projetos</li>
+                <li><a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Tarefas Atribuídas</span></a></li>
+                <li><a href="criar-tarefa.html"><i class="fa fa-plus-square"></i> <span class="nav-label">Criar Tarefa / Projeto</span></a></li>
+
+                <li class="nav-label-group">Conteúdo</li>
+                <li><a href="materiais.html"><i class="fa fa-book"></i> <span class="nav-label">Material Didático</span></a></li>
+                <li><a href="cursos.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Cursos Gratuitos</span></a></li>
+                <li><a href="aulas-privadas.html"><i class="fa fa-video-camera"></i> <span class="nav-label">Aulas Privadas Gratuitas</span></a></li>
+
+                <li class="nav-label-group">Comunicação</li>
+                <li><a href="mensagens.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mensagens</span> <span class="label label-warning pull-right" data-msg-count>0</span></a></li>
+                <li><a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário</span></a></li>
+
+                <li class="nav-label-group">Gestão</li>
+                <li><a href="relatorios.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Relatórios</span></a></li>
+                <li><a href="perfil.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil &amp; Definições</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Pesquisar turma, estudante, tarefa..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="criar-tarefa.html" class="btn btn-primary btn-sm" style="margin-top:14px;margin-right:6px;">
+                            <i class="fa fa-plus"></i> Nova Tarefa
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning" data-msg-count>0</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li><a href="mensagens.html">Ver todas as mensagens</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">
+                            <span class="avatar-circle sm" data-prof-iniciais>P</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#" data-logout><i class="fa fa-sign-out"></i> Sair</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Perfil &amp; Definições</h2>
+                    <small class="text-muted">Gira os seus dados pessoais, disciplinas e preferências do portal.</small>
+                </div>
+            </div>
+
+            <div class="row m-t-md">
+                <div class="col-lg-4">
+                    <div class="ibox">
+                        <div class="ibox-content text-center">
+                            <div class="avatar-circle" style="width:78px;height:78px;font-size:26px;margin:0 auto 14px auto" data-prof-iniciais>P</div>
+                            <h3 data-prof-nome style="margin-top:0">Professor</h3>
+                            <p class="text-muted" data-prof-disciplina>Disciplina</p>
+                            <p class="text-muted" id="perfil-escola"></p>
+                            <span class="pill pill-green">Conta ativa</span>
+                        </div>
+                    </div>
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Resumo de atividade</h5></div>
+                        <div class="ibox-content">
+                            <p><i class="fa fa-users text-navy"></i> <span id="perfil-turmas">0</span> turmas atribuídas</p>
+                            <p><i class="fa fa-user text-navy"></i> <span id="perfil-estudantes">0</span> estudantes acompanhados</p>
+                            <p class="m-b-none"><i class="fa fa-graduation-cap text-navy"></i> <span id="perfil-cursos">0</span> cursos gratuitos criados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Dados pessoais</h5></div>
+                        <div class="ibox-content">
+                            <form id="formPerfil">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group"><label>Nome completo</label><input type="text" class="form-control" name="nome" id="pf-nome"></div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group"><label>Disciplina(s)</label><input type="text" class="form-control" name="disciplina" id="pf-disciplina"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group"><label>E-mail</label><input type="email" class="form-control" name="email" id="pf-email"></div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group"><label>Escola / Núcleo</label><input type="text" class="form-control" name="escola" id="pf-escola"></div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar alterações</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Preferências de notificação</h5></div>
+                        <div class="ibox-content">
+                            <div class="checkbox"><label><input type="checkbox" checked> Notificar sobre novas mensagens de encarregados de educação</label></div>
+                            <div class="checkbox"><label><input type="checkbox" checked> Notificar sobre prazos de tarefas a expirar</label></div>
+                            <div class="checkbox"><label><input type="checkbox"> Resumo semanal de desempenho das turmas por e-mail</label></div>
+                        </div>
+                    </div>
+
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Dados de demonstração</h5></div>
+                        <div class="ibox-content">
+                            <p class="text-muted">Este portal utiliza dados fictícios para fins de demonstração, guardados apenas no seu navegador. Ao integrar com o Sistema Caracol, estes dados serão substituídos por informação real via API.</p>
+                            <button class="btn btn-outline btn-primary" data-reset-demo><i class="fa fa-refresh"></i> Repor dados de demonstração</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Sistema Caracol &bull; v1.0
+            </div>
+            <div>
+                <strong>&copy; 2026 Sistema Caracol</strong> — Portal do Professor
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pages/perfil.js"></script>
+</body>
+</html>

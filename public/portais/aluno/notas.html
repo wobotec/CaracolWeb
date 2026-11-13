@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="../auth-guard.js" data-role="aluno"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas | Portal do Aluno - Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+</head>
+<body class="fixed-sidebar ">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Rafael Andrade Souza</strong>
+                            </span>
+                            <span class="text-muted text-xs block">Análise e Desenvolvimento de Sistemas <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="pagamentos.html">Financeiro</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-logout>Sair</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CRC
+                </div>
+            </li>
+            <li>
+                <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel</span></a>
+            </li>
+            <li class="nav-section-title"><span>ACADÊMICO</span></li>
+            <li>
+                <a href="aprendizado.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Meu Aprendizado</span></a>
+            </li>
+            <li class="active">
+                <a href="notas.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Notas</span></a>
+            </li>
+            <li>
+                <a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a>
+            </li>
+            <li>
+                <a href="comportamento.html"><i class="fa fa-shield"></i> <span class="nav-label">Comportamento</span></a>
+            </li>
+            <li>
+                <a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário de Aulas</span></a>
+            </li>
+            <li>
+                <a href="progresso.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Progresso dos Cursos</span></a>
+            </li>
+            <li>
+                <a href="aulas-online.html"><i class="fa fa-play-circle"></i> <span class="nav-label">Aulas Online</span></a>
+            </li>
+            <li class="nav-section-title"><span>CARREIRA</span></li>
+            <li>
+                <a href="colaboracao.html"><i class="fa fa-users"></i> <span class="nav-label">Colaboração em Projetos</span></a>
+            </li>
+            <li>
+                <a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Projetos e Tarefas</span></a>
+            </li>
+            <li>
+                <a href="empregos.html"><i class="fa fa-briefcase"></i> <span class="nav-label">Empregos e Estágios</span></a>
+            </li>
+            <li>
+                <a href="recomendacoes.html"><i class="fa fa-thumbs-o-up"></i> <span class="nav-label">Recomendações</span></a>
+            </li>
+            <li class="nav-section-title"><span>COMUNICAÇÃO</span></li>
+            <li>
+                <a href="avisos.html"><i class="fa fa-bullhorn"></i> <span class="nav-label">Avisos</span></a>
+            </li>
+            <li>
+                <a href="mensagens.html"><i class="fa fa-comments"></i> <span class="nav-label">Fale com Professores</span></a>
+            </li>
+            <li>
+                <a href="solicitacoes.html"><i class="fa fa-life-ring"></i> <span class="nav-label">Solicitações e Reclamações</span></a>
+            </li>
+            <li class="nav-section-title"><span>CONTA</span></li>
+            <li>
+                <a href="pagamentos.html"><i class="fa fa-credit-card"></i> <span class="nav-label">Financeiro</span></a>
+            </li>
+            <li>
+                <a href="perfil.html"><i class="fa fa-user-circle-o"></i> <span class="nav-label">Meu Perfil</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Buscar disciplinas, avisos, colegas..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="avisos.html" title="Avisos">
+                            <i class="fa fa-bullhorn"></i> <span class="label label-danger">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mensagens.html" title="Mensagens">
+                            <i class="fa fa-envelope"></i> <span class="label label-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perfil.html">
+                            <i class="fa fa-user"></i> Rafael
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-logout>
+                            <i class="fa fa-sign-out"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>Notas</h2>
+                <ol class="breadcrumb">
+                    <li><a href="dashboard.html">Portal do Aluno</a></li>
+                    <li class="active"><strong>Notas</strong></li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-right small text-muted" style="margin-top:22px">
+                    Matrícula <strong>2024104532</strong> &middot; Turma <strong>ADS-2024/2N</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            
+<div class="row">
+    <div class="col-lg-3 col-sm-6">
+        <div class="stat-card"><div class="stat-icon"><i class="fa fa-bar-chart"></i></div>
+            <div><div class="stat-value">8,4</div><div class="stat-label">Média Geral</div></div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="stat-card"><div class="stat-icon"><i class="fa fa-trophy"></i></div>
+            <div><div class="stat-value">3º</div><div class="stat-label">Posição na turma</div></div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="stat-card"><div class="stat-icon"><i class="fa fa-check"></i></div>
+            <div><div class="stat-value">6</div><div class="stat-label">Disciplinas aprovadas</div></div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-sm-6">
+        <div class="stat-card"><div class="stat-icon"><i class="fa fa-exclamation-triangle"></i></div>
+            <div><div class="stat-value">1</div><div class="stat-label">Em recuperação</div></div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5><i class="fa fa-list-alt ibox-icon"></i>Boletim &mdash; 2026.1</h5>
+                <div class="ibox-tools">
+                    <select class="form-control input-sm" style="width:auto;display:inline-block">
+                        <option>2026.1 &mdash; Semestre atual</option>
+                        <option>2025.2</option>
+                        <option>2025.1</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Disciplina</th>
+                            <th>Professor(a)</th>
+                            <th class="text-center">Uni. 1</th>
+                            <th class="text-center">Uni. 2</th>
+                            <th class="text-center">Uni. 3</th>
+                            <th class="text-center">Média</th>
+                            <th class="text-center">Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Estrutura de Dados II</td><td>Marcos Vinícius Lima</td>
+                            <td class="text-center">8,0</td><td class="text-center">8,5</td><td class="text-center">9,0</td>
+                            <td class="text-center"><strong>8,5</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-otimo">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Banco de Dados II</td><td>Camila Ribeiro Alves</td>
+                            <td class="text-center">7,0</td><td class="text-center">6,5</td><td class="text-center">7,5</td>
+                            <td class="text-center"><strong>7,0</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-bom">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Engenharia de Software</td><td>Paulo Henrique Costa</td>
+                            <td class="text-center">9,0</td><td class="text-center">9,5</td><td class="text-center">9,0</td>
+                            <td class="text-center"><strong>9,2</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-otimo">Aprovado</span></td>
+                        </tr>
+                        <tr>
+                            <td>Redes de Computadores</td><td>Fernanda Dias Martins</td>
+                            <td class="text-center">6,0</td><td class="text-center">5,5</td><td class="text-center">—</td>
+                            <td class="text-center"><strong>5,7</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-atencao">Cursando</span></td>
+                        </tr>
+                        <tr>
+                            <td>Programação Web II</td><td>Ítalo Nogueira Prado</td>
+                            <td class="text-center">4,5</td><td class="text-center">5,0</td><td class="text-center">—</td>
+                            <td class="text-center"><strong>4,8</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-critico">Recuperação</span></td>
+                        </tr>
+                        <tr>
+                            <td>Matemática Discreta</td><td>Beatriz Andrade Souza</td>
+                            <td class="text-center">8,5</td><td class="text-center">8,0</td><td class="text-center">—</td>
+                            <td class="text-center"><strong>8,2</strong></td>
+                            <td class="text-center"><span class="grade-badge grade-otimo">Cursando</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-7">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-line-chart ibox-icon"></i>Evolução por unidade</h5></div>
+            <div class="ibox-content"><canvas id="chartNotas" height="120"></canvas></div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-info-circle ibox-icon"></i>Observações do professor</h5></div>
+            <div class="ibox-content">
+                <p class="small"><strong>Programação Web II</strong> &mdash; Recomendo revisão dos conteúdos de APIs REST antes da unidade 3. Disponibilizo monitoria às quartas, 16h.</p>
+                <hr>
+                <p class="small text-muted">Última atualização de notas: 08/07/2026 às 19:32.</p>
+                <a href="mensagens.html" class="btn btn-outline btn-primary btn-sm">Falar com o professor</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Portal do Aluno &mdash; Sistema Caracol
+            </div>
+            <div>
+                <strong>&copy; 2026 Caracol Educacional.</strong> Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script src="js/plugins/chartjs/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('chartNotas'), {
+    type: 'bar',
+    data: {
+        labels: ['Estrutura de Dados II','Banco de Dados II','Eng. de Software','Redes','Prog. Web II','Mat. Discreta'],
+        datasets: [{ label:'Média atual', data:[8.5,7.0,9.2,5.7,4.8,8.2],
+            backgroundColor:['#007af0','#007af0','#1ab394','#f8ac59','#ed5565','#007af0'] }]
+    },
+    options: { plugins:{legend:{display:false}}, scales:{y:{min:0,max:10}} }
+});
+</script>
+
+</body>
+</html>

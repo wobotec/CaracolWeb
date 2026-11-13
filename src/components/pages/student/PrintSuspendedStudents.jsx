@@ -1,9 +1,9 @@
 // src/pages/student/PrintSuspendedStudents.jsx
 import React from "react";
-import SuspendedHeader from "../../Student/SuspendedHeader";
-import SuspendedTable from "../../Student/SuspendedTable";
+import SuspendedHeader from "../../student/SuspendedHeader";
+import SuspendedTable from "../../student/SuspendedTable";
 import { useStudentStore } from "../../../stores/student.store";
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 const PrintSuspendedStudents = () => {
   const students = useStudentStore((state) => state.students)

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from '../../../hooks/useAuth'
 import { useNavigate } from 'react-router-dom'
+import { homeFor, ROLE_LABELS, normalizeRole } from '../../../config/roles'
+import { MOCK_USERS } from '../../../services/mockUsers'
 
 import splash1 from './../../../assets/img/splash/splash1.jpg';
 import splash2 from './../../../assets/img/splash/splash2.jpg';
@@ -63,6 +65,11 @@ const STYLES = `
 .${P}-social span{font-size:13px;color:#888;font-weight:600;margin-right:4px;}
 .${P}-sBtn{width:36px;height:36px;border-radius:8px;border:none;color:#fff;font-size:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:opacity .2s,transform .15s;font-weight:700;font-family:'Nunito',sans-serif;}
 .${P}-sBtn:hover{opacity:.85;transform:translateY(-1px);}
+.${P}-err{color:#d9534f;font-size:13px;font-weight:600;margin:0 0 14px;}
+.${P}-demo{margin-top:6px;border-top:1px dashed #ddd;padding-top:12px;font-size:11.5px;color:#777;line-height:1.5;}
+.${P}-demo b{color:#444;}
+.${P}-demo button{background:none;border:none;padding:0;color:#4a9fd4;cursor:pointer;font:inherit;text-align:left;}
+.${P}-demo button:hover{text-decoration:underline;}
 @media(max-width:640px){
   .${P}-card{flex-direction:column;}
   .${P}-div{display:none;}
@@ -75,7 +82,7 @@ const c = (name) => `${P}-${name}`;
 
 export default function Login() {
 
-  const { login, loading, error, isAuthenticated } = useAuth()
+  const { login, loading, error, isAuthenticated, user } = useAuth()
   const navigate = useNavigate()
 
   const [form, setForm] = useState({
@@ -83,11 +90,17 @@ export default function Login() {
     password: '',
   })
 
+  // Depois do login, cada perfil vai para a sua área:
+  // funcionário -> painel (React) | professor, aluno, encarregado -> portal próprio
   useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/', { replace: true })
+    if (!isAuthenticated || !normalizeRole(user?.role)) return
+    const dest = homeFor(user.role)
+    if (dest.external) {
+      window.location.replace(dest.url)
+    } else {
+      navigate(dest.path, { replace: true })
     }
-  }, [isAuthenticated, navigate])
+  }, [isAuthenticated, user, navigate])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -159,15 +172,16 @@ export default function Login() {
             <form onSubmit={handleSubmit} className="d-flex flex-column align-items-center w-100">
             <div className={c("field")}>
               <span className={c("icon fa fa-user")}></span>
-              <input className={c("input")}  type="text" label="Email" value={form.email}
-              onChange={handleChange} name="email" placeholder="Digite seu email"/>
+              <input className={c("input")}  type="text" value={form.email}
+              onChange={handleChange} name="email" placeholder="E-mail ou matrícula"
+              autoComplete="username" autoFocus/>
             </div>
             
 
             <div className={c("field")}>
               <span className={c("icon fa fa-lock")}></span>
               <input className={c("input")} name="password" value={form.password} type="password" onChange={handleChange}
-            placeholder="Digite sua senha" />
+            placeholder="Digite sua senha" autoComplete="current-password" />
             </div>
       
 
@@ -175,9 +189,26 @@ export default function Login() {
               <button disabled={loading} className={c("btn btn-login btn-primary")}>{loading ? 'Entrando...' : 'Login'}</button>
             </div>            
               
-              {error && <p className="text-darnger text-sm">{error}</p>}
+              {error && <p className={c("err")}>{error}</p>}
             
             </form>
+
+            {/* Só aparece em modo demonstração (sem VITE_API_URL) */}
+            {!import.meta.env.VITE_API_URL && (
+              <div className={c("demo")}>
+                <b>Contas de demonstração</b> (clique para preencher)
+                {MOCK_USERS.map((u) => (
+                  <div key={u.id}>
+                    <button
+                      type="button"
+                      onClick={() => setForm({ email: u.identifiers[0], password: u.password })}
+                    >
+                      {ROLE_LABELS[u.role]}: {u.identifiers[0]}
+                    </button>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

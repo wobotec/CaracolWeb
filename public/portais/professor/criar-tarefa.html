@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <script src="../auth-guard.js" data-role="professor"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Tarefa | Portal do Professor — Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body class="mini-navbar">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="logo-element">C</div>
+                    <div class="profile-element">
+                        <div class="brand-box">
+                            <div class="brand-mark">C</div>
+                            <div class="brand-text">
+                                <div class="brand-name">Caracol</div>
+                                <div class="brand-sub">Portal do Professor</div>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle prof-toggle" href="#">
+                                <span data-prof-nome>Professor</span> <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="perfil.html">Meu perfil</a></li>
+                                <li><a href="#" data-reset-demo>Repor dados de demonstração</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#" data-logout>Terminar sessão</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+
+                <li><a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel Principal</span></a></li>
+
+                <li class="nav-label-group">Turmas &amp; Estudantes</li>
+                <li><a href="turmas.html"><i class="fa fa-users"></i> <span class="nav-label">Minhas Turmas</span></a></li>
+                <li><a href="estudantes.html"><i class="fa fa-user"></i> <span class="nav-label">Estudantes</span></a></li>
+
+                <li class="nav-label-group">Pedagógico</li>
+                <li><a href="notas.html"><i class="fa fa-list-alt"></i> <span class="nav-label">Notas</span></a></li>
+                <li><a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a></li>
+                <li><a href="comportamento.html"><i class="fa fa-smile-o"></i> <span class="nav-label">Comportamento</span></a></li>
+                <li><a href="avaliacao-continua.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Avaliação Contínua</span></a></li>
+
+                <li class="nav-label-group">Tarefas &amp; Projetos</li>
+                <li><a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Tarefas Atribuídas</span></a></li>
+                <li><a href="criar-tarefa.html"><i class="fa fa-plus-square"></i> <span class="nav-label">Criar Tarefa / Projeto</span></a></li>
+
+                <li class="nav-label-group">Conteúdo</li>
+                <li><a href="materiais.html"><i class="fa fa-book"></i> <span class="nav-label">Material Didático</span></a></li>
+                <li><a href="cursos.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Cursos Gratuitos</span></a></li>
+                <li><a href="aulas-privadas.html"><i class="fa fa-video-camera"></i> <span class="nav-label">Aulas Privadas Gratuitas</span></a></li>
+
+                <li class="nav-label-group">Comunicação</li>
+                <li><a href="mensagens.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mensagens</span> <span class="label label-warning pull-right" data-msg-count>0</span></a></li>
+                <li><a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário</span></a></li>
+
+                <li class="nav-label-group">Gestão</li>
+                <li><a href="relatorios.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Relatórios</span></a></li>
+                <li><a href="perfil.html"><i class="fa fa-cog"></i> <span class="nav-label">Perfil &amp; Definições</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary" href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Pesquisar turma, estudante, tarefa..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="criar-tarefa.html" class="btn btn-primary btn-sm" style="margin-top:14px;margin-right:6px;">
+                            <i class="fa fa-plus"></i> Nova Tarefa
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-envelope"></i> <span class="label label-warning" data-msg-count>0</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li><a href="mensagens.html">Ver todas as mensagens</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">
+                            <span class="avatar-circle sm" data-prof-iniciais>P</span>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#" data-logout><i class="fa fa-sign-out"></i> Sair</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ol class="breadcrumb">
+                        <li><a href="tarefas.html">Tarefas Atribuídas</a></li>
+                        <li class="active">Criar Tarefa / Projeto</li>
+                    </ol>
+                    <h2>Criar Tarefa ou Projeto</h2>
+                    <small class="text-muted">Defina uma nova tarefa, trabalho de casa, ficha ou projeto para uma turma.</small>
+                </div>
+            </div>
+
+            <div class="row m-t-md">
+                <div class="col-lg-8">
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Detalhes da tarefa</h5></div>
+                        <div class="ibox-content">
+                            <form id="formTarefa">
+                                <div class="form-group">
+                                    <label>Título</label>
+                                    <input type="text" class="form-control" name="titulo" value="Projeto: Estatística no dia a dia" placeholder="Ex: Projeto — Estatística no dia a dia" required>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Turma</label>
+                                            <select class="form-control" name="turmaId" id="selectTurmaTarefa" required></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Tipo</label>
+                                            <select class="form-control" name="tipo">
+                                                <option>Trabalho individual</option>
+                                                <option selected>Projeto em grupo</option>
+                                                <option>Trabalho de casa</option>
+                                                <option>Ficha</option>
+                                                <option>Teste rápido</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Data de entrega</label>
+                                            <input type="date" class="form-control" name="prazo" value="2026-11-12" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>Pontuação máxima</label>
+                                            <input type="number" class="form-control" name="pontos" value="20" min="1" max="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Instruções para os estudantes</label>
+                                    <textarea class="form-control" name="instrucoes" rows="5" placeholder="Descreva os objetivos, critérios de avaliação e forma de entrega...">Recolha dados do quotidiano, organize-os numa tabela e apresente as conclusões com gráficos. Trabalho em grupos de 4; incluir fontes e cálculos.</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Anexar material de apoio (opcional)</label>
+                                    <input type="file" class="form-control">
+                                    <p class="text-muted" style="font-size:11.5px;margin-top:4px">Os ficheiros anexados ficarão disponíveis em Material Didático.</p>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" name="notificar" checked> Notificar estudantes e encarregados de educação</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Publicar Tarefa</button>
+                                <a href="tarefas.html" class="btn btn-white">Cancelar</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ibox">
+                        <div class="ibox-title"><h5>Dicas</h5></div>
+                        <div class="ibox-content">
+                            <p><i class="fa fa-check-circle text-navy"></i> Defina critérios de avaliação claros nas instruções.</p>
+                            <p><i class="fa fa-check-circle text-navy"></i> Prazos curtos funcionam melhor para tarefas simples; projetos precisam de mais tempo.</p>
+                            <p><i class="fa fa-check-circle text-navy"></i> Anexe materiais de apoio para reduzir dúvidas.</p>
+                            <p class="m-b-none"><i class="fa fa-check-circle text-navy"></i> As entregas ficam visíveis em <a href="tarefas.html">Tarefas Atribuídas</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Sistema Caracol &bull; v1.0
+            </div>
+            <div>
+                <strong>&copy; 2026 Sistema Caracol</strong> — Portal do Professor
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/pages/criar-tarefa.js"></script>
+</body>
+</html>

@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../../../hooks/useAuth";
 
 const TopBar = () => {
+  const { logout } = useAuth();
+
   return ( <>
   <div className="row border-bottom">
       <nav className="navbar navbar-static-top  " role="navigation" style={{ marginBottom: 0 }}>
@@ -69,9 +72,9 @@ const TopBar = () => {
               <li><a><i className="fa fa-gift"></i></a></li>
 
               <li>
-                  <a href="login.html">
+                  <Link to="/login" onClick={logout}>
                       <i className="fa fa-sign-out"></i> Sair
-                  </a>
+                  </Link>
               </li>
           </ul>
 

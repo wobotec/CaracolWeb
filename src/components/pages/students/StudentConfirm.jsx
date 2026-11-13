@@ -1,10 +1,10 @@
 import { useState } from "react"
-import StudentInfo from "../../Student/StudentInfo"
-import AcademicHistory from "../../Student/AcademicHistory"
-import StudentConfirmForm from "../../Student/StudentConfirmForm"
+import StudentInfo from "../../student/StudentInfo"
+import AcademicHistory from "../../student/AcademicHistory"
+import StudentConfirmForm from "../../student/StudentConfirmForm"
 import { courses, classes, turmas } from "../../../data/students"
 import { useStudentStore } from "../../../stores/student.store"
-import PageBase from "../../Layout/PageBase/PageBase"
+import PageBase from "../../layout/PageBase/PageBase"
 
 export default function StudentConfirm() {
     const students = useStudentStore((state) => state.students)

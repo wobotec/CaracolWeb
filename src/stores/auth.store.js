@@ -3,6 +3,10 @@ import { persist } from 'zustand/middleware'
 import { loginRequest } from '../services/authService'
 import { registerRequest } from '../services/authService'
 
+// A sessão fica em localStorage na chave "auth-storage". Os portais estáticos
+// (public/portais/auth-guard.js) leem essa mesma chave para saber quem está logado.
+export const AUTH_STORAGE_KEY = 'auth-storage'
+
 export const useAuthStore = create(
   persist(
     (set) => ({
@@ -48,6 +52,14 @@ export const useAuthStore = create(
         set({ user: null, token: null }),
     }),
 
-    { name: 'auth-storage' }
+    {
+      name: AUTH_STORAGE_KEY,
+      version: 1,
+      partialize: (state) => ({ user: state.user, token: state.token }),
+      // v0 não guardava o perfil (role): essas sessões antigas são descartadas
+      // e o utilizador faz login de novo.
+      migrate: (persisted, version) =>
+        version < 1 ? { user: null, token: null } : persisted,
+    }
   )
 )

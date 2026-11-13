@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="../auth-guard.js" data-role="aluno"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendações | Portal do Aluno - Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+</head>
+<body class="fixed-sidebar ">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Rafael Andrade Souza</strong>
+                            </span>
+                            <span class="text-muted text-xs block">Análise e Desenvolvimento de Sistemas <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="pagamentos.html">Financeiro</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-logout>Sair</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CRC
+                </div>
+            </li>
+            <li>
+                <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel</span></a>
+            </li>
+            <li class="nav-section-title"><span>ACADÊMICO</span></li>
+            <li>
+                <a href="aprendizado.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Meu Aprendizado</span></a>
+            </li>
+            <li>
+                <a href="notas.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Notas</span></a>
+            </li>
+            <li>
+                <a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a>
+            </li>
+            <li>
+                <a href="comportamento.html"><i class="fa fa-shield"></i> <span class="nav-label">Comportamento</span></a>
+            </li>
+            <li>
+                <a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário de Aulas</span></a>
+            </li>
+            <li>
+                <a href="progresso.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Progresso dos Cursos</span></a>
+            </li>
+            <li>
+                <a href="aulas-online.html"><i class="fa fa-play-circle"></i> <span class="nav-label">Aulas Online</span></a>
+            </li>
+            <li class="nav-section-title"><span>CARREIRA</span></li>
+            <li>
+                <a href="colaboracao.html"><i class="fa fa-users"></i> <span class="nav-label">Colaboração em Projetos</span></a>
+            </li>
+            <li>
+                <a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Projetos e Tarefas</span></a>
+            </li>
+            <li>
+                <a href="empregos.html"><i class="fa fa-briefcase"></i> <span class="nav-label">Empregos e Estágios</span></a>
+            </li>
+            <li class="active">
+                <a href="recomendacoes.html"><i class="fa fa-thumbs-o-up"></i> <span class="nav-label">Recomendações</span></a>
+            </li>
+            <li class="nav-section-title"><span>COMUNICAÇÃO</span></li>
+            <li>
+                <a href="avisos.html"><i class="fa fa-bullhorn"></i> <span class="nav-label">Avisos</span></a>
+            </li>
+            <li>
+                <a href="mensagens.html"><i class="fa fa-comments"></i> <span class="nav-label">Fale com Professores</span></a>
+            </li>
+            <li>
+                <a href="solicitacoes.html"><i class="fa fa-life-ring"></i> <span class="nav-label">Solicitações e Reclamações</span></a>
+            </li>
+            <li class="nav-section-title"><span>CONTA</span></li>
+            <li>
+                <a href="pagamentos.html"><i class="fa fa-credit-card"></i> <span class="nav-label">Financeiro</span></a>
+            </li>
+            <li>
+                <a href="perfil.html"><i class="fa fa-user-circle-o"></i> <span class="nav-label">Meu Perfil</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Buscar disciplinas, avisos, colegas..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="avisos.html" title="Avisos">
+                            <i class="fa fa-bullhorn"></i> <span class="label label-danger">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mensagens.html" title="Mensagens">
+                            <i class="fa fa-envelope"></i> <span class="label label-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perfil.html">
+                            <i class="fa fa-user"></i> Rafael
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-logout>
+                            <i class="fa fa-sign-out"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>Recomendações</h2>
+                <ol class="breadcrumb">
+                    <li><a href="dashboard.html">Portal do Aluno</a></li>
+                    <li class="active"><strong>Recomendações</strong></li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-right small text-muted" style="margin-top:22px">
+                    Matrícula <strong>2024104532</strong> &middot; Turma <strong>ADS-2024/2N</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            
+<div class="row">
+    <div class="col-lg-12">
+        <div class="alert alert-info" style="border-left:3px solid #007af0">
+            <i class="fa fa-info-circle"></i> As recomendações abaixo são geradas por seus professores e coordenadores com base no seu desempenho, interesses e histórico acadêmico.
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="rec-card m-b-md" style="border-top-color:#007af0">
+            <span class="label" style="background:#007af0;color:#fff"><i class="fa fa-database"></i> Curso</span>
+            <h4 class="m-t-sm">SQL Avançado (extensão)</h4>
+            <p class="text-muted small">Aprofunde consultas complexas, índices e otimização — reforça seu bom desempenho em Banco de Dados II.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <span class="small text-muted">Sugerido por Prof.ª Camila Ribeiro Alves</span>
+                <a href="#" class="btn btn-outline btn-primary btn-xs">Ver detalhes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="rec-card m-b-md" style="border-top-color:#1ab394">
+            <span class="label" style="background:#1ab394;color:#fff"><i class="fa fa-briefcase"></i> Vaga de estágio</span>
+            <h4 class="m-t-sm">Estágio em Suporte e Redes — TechNova</h4>
+            <p class="text-muted small">Compatível com sua evolução em Redes de Computadores neste semestre.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <span class="small text-muted">Sugerido por Prof.ª Fernanda Dias Martins</span>
+                <a href="#" class="btn btn-outline btn-primary btn-xs">Ver detalhes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="rec-card m-b-md" style="border-top-color:#f8ac59">
+            <span class="label" style="background:#f8ac59;color:#fff"><i class="fa fa-users"></i> Oportunidade acadêmica</span>
+            <h4 class="m-t-sm">Monitoria de Estrutura de Dados II</h4>
+            <p class="text-muted small">Seu desempenho em Estrutura de Dados te credencia a atuar como monitor no próximo semestre.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <span class="small text-muted">Sugerido por Prof. Marcos Vinícius Lima</span>
+                <a href="#" class="btn btn-outline btn-primary btn-xs">Ver detalhes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="rec-card m-b-md" style="border-top-color:#7266ba">
+            <span class="label" style="background:#7266ba;color:#fff"><i class="fa fa-cubes"></i> Grupo de estudo</span>
+            <h4 class="m-t-sm">Grupo de estudos: Padrões de Projeto</h4>
+            <p class="text-muted small">Aprofunde os padrões vistos em Engenharia de Software junto a outros alunos destaque.</p>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <span class="small text-muted">Sugerido por Prof. Paulo Henrique Costa</span>
+                <a href="#" class="btn btn-outline btn-primary btn-xs">Ver detalhes</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Portal do Aluno &mdash; Sistema Caracol
+            </div>
+            <div>
+                <strong>&copy; 2026 Caracol Educacional.</strong> Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+</html>

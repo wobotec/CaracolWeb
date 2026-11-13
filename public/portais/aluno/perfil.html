@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="../auth-guard.js" data-role="aluno"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil | Portal do Aluno - Caracol</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    
+</head>
+<body class="fixed-sidebar ">
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">Rafael Andrade Souza</strong>
+                            </span>
+                            <span class="text-muted text-xs block">Análise e Desenvolvimento de Sistemas <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="perfil.html">Meu Perfil</a></li>
+                        <li><a href="pagamentos.html">Financeiro</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#" data-logout>Sair</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    CRC
+                </div>
+            </li>
+            <li>
+                <a href="dashboard.html"><i class="fa fa-th-large"></i> <span class="nav-label">Painel</span></a>
+            </li>
+            <li class="nav-section-title"><span>ACADÊMICO</span></li>
+            <li>
+                <a href="aprendizado.html"><i class="fa fa-graduation-cap"></i> <span class="nav-label">Meu Aprendizado</span></a>
+            </li>
+            <li>
+                <a href="notas.html"><i class="fa fa-bar-chart"></i> <span class="nav-label">Notas</span></a>
+            </li>
+            <li>
+                <a href="presenca.html"><i class="fa fa-check-square-o"></i> <span class="nav-label">Presença</span></a>
+            </li>
+            <li>
+                <a href="comportamento.html"><i class="fa fa-shield"></i> <span class="nav-label">Comportamento</span></a>
+            </li>
+            <li>
+                <a href="calendario.html"><i class="fa fa-calendar"></i> <span class="nav-label">Calendário de Aulas</span></a>
+            </li>
+            <li>
+                <a href="progresso.html"><i class="fa fa-line-chart"></i> <span class="nav-label">Progresso dos Cursos</span></a>
+            </li>
+            <li>
+                <a href="aulas-online.html"><i class="fa fa-play-circle"></i> <span class="nav-label">Aulas Online</span></a>
+            </li>
+            <li class="nav-section-title"><span>CARREIRA</span></li>
+            <li>
+                <a href="colaboracao.html"><i class="fa fa-users"></i> <span class="nav-label">Colaboração em Projetos</span></a>
+            </li>
+            <li>
+                <a href="tarefas.html"><i class="fa fa-tasks"></i> <span class="nav-label">Projetos e Tarefas</span></a>
+            </li>
+            <li>
+                <a href="empregos.html"><i class="fa fa-briefcase"></i> <span class="nav-label">Empregos e Estágios</span></a>
+            </li>
+            <li>
+                <a href="recomendacoes.html"><i class="fa fa-thumbs-o-up"></i> <span class="nav-label">Recomendações</span></a>
+            </li>
+            <li class="nav-section-title"><span>COMUNICAÇÃO</span></li>
+            <li>
+                <a href="avisos.html"><i class="fa fa-bullhorn"></i> <span class="nav-label">Avisos</span></a>
+            </li>
+            <li>
+                <a href="mensagens.html"><i class="fa fa-comments"></i> <span class="nav-label">Fale com Professores</span></a>
+            </li>
+            <li>
+                <a href="solicitacoes.html"><i class="fa fa-life-ring"></i> <span class="nav-label">Solicitações e Reclamações</span></a>
+            </li>
+            <li class="nav-section-title"><span>CONTA</span></li>
+            <li>
+                <a href="pagamentos.html"><i class="fa fa-credit-card"></i> <span class="nav-label">Financeiro</span></a>
+            </li>
+            <li class="active">
+                <a href="perfil.html"><i class="fa fa-user-circle-o"></i> <span class="nav-label">Meu Perfil</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i></a>
+                    <form role="search" class="navbar-form-custom" method="post" action="#">
+                        <div class="form-group">
+                            <input type="text" placeholder="Buscar disciplinas, avisos, colegas..." class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="avisos.html" title="Avisos">
+                            <i class="fa fa-bullhorn"></i> <span class="label label-danger">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mensagens.html" title="Mensagens">
+                            <i class="fa fa-envelope"></i> <span class="label label-primary">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="perfil.html">
+                            <i class="fa fa-user"></i> Rafael
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-logout>
+                            <i class="fa fa-sign-out"></i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>Meu Perfil</h2>
+                <ol class="breadcrumb">
+                    <li><a href="dashboard.html">Portal do Aluno</a></li>
+                    <li class="active"><strong>Meu Perfil</strong></li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+                <div class="text-right small text-muted" style="margin-top:22px">
+                    Matrícula <strong>2024104532</strong> &middot; Turma <strong>ADS-2024/2N</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            
+<div class="row">
+    <div class="col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content text-center">
+                <img alt="foto do aluno" class="img-circle" style="width:110px;height:110px;object-fit:cover" src="img/profile_small.jpg">
+                <h3 class="m-t-md m-b-xs">Rafael Andrade Souza</h3>
+                <p class="text-muted">Análise e Desenvolvimento de Sistemas</p>
+                <p class="small text-muted">Matrícula 2024104532 &middot; Turma ADS-2024/2N</p>
+                <div class="m-t-md">
+                    <span class="label label-primary">4º Semestre</span>
+                    <span class="label label-success">Situação regular</span>
+                </div>
+                <hr>
+                <a href="#" class="btn btn-outline btn-primary btn-sm btn-block"><i class="fa fa-camera"></i> Alterar foto</a>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-shield ibox-icon"></i>Segurança</h5></div>
+            <div class="ibox-content">
+                <a href="#" class="btn btn-outline btn-primary btn-sm btn-block m-b-sm"><i class="fa fa-lock"></i> Alterar senha</a>
+                <a href="#" class="btn btn-outline btn-primary btn-sm btn-block"><i class="fa fa-mobile"></i> Verificação em duas etapas</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-id-card ibox-icon"></i>Dados pessoais</h5></div>
+            <div class="ibox-content">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Nome completo</label>
+                        <div class="col-sm-9"><input type="text" class="form-control" value="Rafael Andrade Souza"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">E-mail institucional</label>
+                        <div class="col-sm-9"><input type="email" class="form-control" value="rafael.souza@aluno.caracol.edu.br" disabled></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">E-mail pessoal</label>
+                        <div class="col-sm-9"><input type="email" class="form-control" value="rafael.asouza@gmail.com"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Telefone</label>
+                        <div class="col-sm-9"><input type="text" class="form-control" value="(85) 99123-4567"></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Endereço</label>
+                        <div class="col-sm-9"><input type="text" class="form-control" value="Rua das Acácias, 245 &mdash; Fortaleza/CE"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button type="button" class="btn btn-primary">Salvar alterações</button>
+                            <button type="button" class="btn btn-white">Cancelar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title"><h5><i class="fa fa-bell ibox-icon"></i>Preferências de notificação</h5></div>
+            <div class="ibox-content">
+                <div class="checkbox i-checks"><label><input type="checkbox" checked> Avisos e comunicados institucionais</label></div>
+                <div class="checkbox i-checks"><label><input type="checkbox" checked> Notas e resultados de avaliações</label></div>
+                <div class="checkbox i-checks"><label><input type="checkbox" checked> Vagas e recomendações de carreira</label></div>
+                <div class="checkbox i-checks"><label><input type="checkbox"> Novidades sobre aulas online e cursos extras</label></div>
+                <div class="m-t-md"><button class="btn btn-primary btn-sm">Salvar preferências</button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                Portal do Aluno &mdash; Sistema Caracol
+            </div>
+            <div>
+                <strong>&copy; 2026 Caracol Educacional.</strong> Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+</html>

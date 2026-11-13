@@ -1,9 +1,19 @@
 import { Navigate, Outlet } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 import { useEffect } from 'react'
+import { ROLES, normalizeRole, homeFor } from '../../config/roles'
 
-export function PrivateRoute() {
-  const { token, logout } = useAuth()
+// Sai do React e vai para um portal HTML estático.
+function ExternalRedirect({ url }) {
+  useEffect(() => {
+    window.location.replace(url)
+  }, [url])
+  return null
+}
+
+// allowedRoles: perfis que podem entrar nestas rotas (por omissão só funcionários).
+export function PrivateRoute({ allowedRoles = [ROLES.FUNCIONARIO] }) {
+  const { token, user, logout } = useAuth()
 
   // AUTO LOGOUT (para teste)
   useEffect(() => {
@@ -43,6 +53,16 @@ export function PrivateRoute() {
     return <Navigate to="/login" replace />
   }
 
-  // autenticado
+  // autenticado, mas com perfil que não pertence a esta área:
+  // manda cada um para o seu próprio portal.
+  const role = normalizeRole(user?.role)
+  if (!role || !allowedRoles.includes(role)) {
+    const dest = homeFor(role)
+    return dest.external
+      ? <ExternalRedirect url={dest.url} />
+      : <Navigate to="/login" replace />
+  }
+
+  // autenticado e autorizado
   return <Outlet />
 }
